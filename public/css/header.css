@@ -1,0 +1,63 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    color: white;
+    padding: 0;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar a, .navbar i {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 15px 20px; /* Increased padding for better click area */
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 20px; /* Increase font size */
+}
+
+.navbar a:hover, .navbar i:hover {
+    background-color: #5d9a4c;
+}
+
+
+.sign-up {
+    background-color: #FE8403;
+}
+
+.log-in {
+    background-color: #FF8A00;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+}
+
+.section.middle {
+    flex-grow: 1;
+    justify-content: center;
+    border-right: 2px solid #555; /* Add right border to separate middle and right sections */
+    color: beige;
+}
+
+.section.right {
+    justify-content: flex-end;
+}
+
+
+.section.left {
+    background-color: #55C57A;
+    margin-right: auto;
+    padding-left: 0; /* Remove padding on the left */
+}
