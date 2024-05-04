@@ -36,3 +36,13 @@
 .footer .social-icons a:hover {
   color: #5d9a4c;
 }
+
+/* Dark Theme */
+.dark-theme footer {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.dark-theme footer a {
+  color: #e0e0e0;
+}

@@ -2,6 +2,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: white;
+    color: black;
 }
 
 .navbar {
@@ -60,4 +62,47 @@ body {
     background-color: #55C57A;
     margin-right: auto;
     padding-left: 0; /* Remove padding on the left */
+}
+
+
+
+.dark-theme body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Navbar */
+.dark-theme .navbar {
+    background-color: #333;
+}
+
+.dark-theme .navbar a {
+    color: #e0e0e0;
+}
+
+.dark-theme .navbar .fa-star,
+.dark-theme .navbar .fa-sun,
+.dark-theme .navbar .fa-moon {
+    color: #e0e0e0;
+}
+
+/* Header */
+.dark-theme .header {
+    background-color: #333;
+}
+
+/* Features */
+.dark-theme .feature-box {
+    background-color: #444;
+}
+
+/* Cards */
+.dark-theme .card__side--front {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Popup */
+.dark-theme .popup {
+    background-color: rgba(0, 0, 0, 0.9);
 }

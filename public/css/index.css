@@ -2024,4 +2024,72 @@
         width:100%
     }
   }
-  
+
+
+  /* Light Theme */
+body {
+  background-color: white;
+  color: black;
+}
+
+.dark-theme body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Navbar */
+.dark-theme .navbar {
+  background-color: #333;
+}
+
+.dark-theme .navbar a {
+  color: #e0e0e0;
+}
+
+/* Header */
+.dark-theme .header {
+  background-color: #333;
+}
+
+/* Section About */
+.section-about {
+  background-color: #f7f7f7;
+}
+
+.dark-theme .section-about {
+  background-color: #333;
+}
+
+/* Section Tours */
+.section-tours {
+  background-color: #f7f7f7;
+}
+
+.dark-theme .section-tours {
+  background-color: #333;
+}
+
+/* Features */
+.dark-theme .feature-box {
+  background-color: #444;
+}
+
+/* Cards */
+.dark-theme .card__side--front {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+/* Gradient sections */
+.section-features {
+  background-image: linear-gradient(to right bottom, rgba(50,150,60,0.8), rgba(20,120,90,0.8)),url(../img/nat-4.jpg);
+}
+
+.section-book {
+  background-image: linear-gradient(to right bottom, rgba(50,150,60,1), rgba(20,120,90,1));
+}
+
+/* Popup */
+.dark-theme .popup {
+  background-color: rgba(0, 0, 0, 0.9);
+}
