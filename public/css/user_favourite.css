@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -104,78 +105,10 @@ body {
     margin-right: 0.5rem;
 }
 
-.booking-card {
-    display: flex;
-    background-color: #C6F6D5;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    align-items: center;
-}
-
-.booking-card img {
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-    margin-right: 20px;
-}
-
-.booking-card p {
-    margin: 5px 0;
-}
-
-.details-button {
-    background-color: #48BB78;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.page-button {
-    padding: 8px 16px;
-    margin: 0 5px;
-    background-color: #32BB88;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.page-button:hover {
-    background-color: #22c55e;
-}
-
-.hidden {
-    display: none;
-}
-
 .sort-options {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 2rem;
-}
-
-.sort-button {
-    background: #22c55e;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    margin-left: 0.5rem;
-}
-
-.sort-button:hover {
-    background-color: #16a34a;
 }
 
 .sort-select {
@@ -184,4 +117,45 @@ body {
     border-radius: 0.25rem;
     background-color: white;
     font-size: 1rem;
+}
+
+.favourite-card {
+    background-color: #E6F4EA;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favourite-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.favourite-card img {
+    width: 100px;
+    height: 70px;
+    border-radius: 0.25rem;
+}
+
+.favourite-card .details {
+    flex-grow: 1;
+    padding: 0 1rem;
+}
+
+.favourite-card button {
+    background-color: #22c55e;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favourite-card button:hover {
+    background-color: #16a34a;
 }
