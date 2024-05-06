@@ -2026,15 +2026,9 @@
   }
 
 
-  /* Light Theme */
-body {
-  background-color: white;
-  color: black;
-}
-
 .dark-theme body {
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /* Navbar */

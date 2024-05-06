@@ -1,0 +1,217 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    background: linear-gradient(91deg, #7ED39A 0.56%, #32BB88 99.33%);
+    padding: 1rem;
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar a:hover {
+    background-color: #22c55e;
+    color: white;
+}
+
+.sidebar a i {
+    margin-right: 0.5rem;
+}
+
+.sidebar .section-title {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: black;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+.sidebar .logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+}
+
+.content {
+    padding: 2rem;
+    flex: 1;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: #22c55e;
+}
+
+.content-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content-header a {
+    color: #22c55e;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.content-header a:hover {
+    text-decoration: underline;
+}
+
+.content-header a i {
+    margin-right: 0.5rem;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-wrapper {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.avatar-wrapper img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-wrapper input {
+    display: none;
+}
+
+.avatar-wrapper .avatar-overlay {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avatar-wrapper .avatar-overlay i {
+    color: white;
+    font-size: 0.75rem;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-group label {
+    color: #6b7280;
+    width: 20%;
+    font-weight: 500;
+    text-align: left;
+}
+
+.form-group input, .form-group .value {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    outline: none;
+}
+
+.form-group .value {
+    border: 1px solid transparent;
+}
+
+.form-group input {
+    border: 1px solid #d1d5db;
+}
+
+.form-group .email-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group .email-input input {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+.form-group .email-input i {
+    color: #22c55e;
+}
+
+.form-group .change-btn {
+    background-color: #22c55e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.form-group .change-btn:hover {
+    background-color: #16a34a;
+}
+
+button[type="submit"] {
+    background-color: #22c55e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #16a34a;
+}
+
+.hidden {
+    display: none;
+}
