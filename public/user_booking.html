@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Booking</title>
+    <link rel="stylesheet" href="css/user_booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            background: linear-gradient(91deg, #7ED39A 0.56%, #32BB88 99.33%);
+            padding: 1rem;
+            width: 20rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sidebar a {
+            color: black;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.1rem;
+        }
+
+        .sidebar a:hover {
+            background-color: #22c55e;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a i {
+            margin-right: 1rem;
+        }
+
+        .sidebar .section-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: black;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: black;
+        }
+
+        .sidebar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .content {
+            padding: 3rem;
+            flex: 1;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            max-height: calc(100vh - 4rem);
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            color: #22c55e;
+            font-size: 1.5rem;
+        }
+
+        .content-header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content-header a {
+            color: #22c55e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .content-header a:hover {
+            text-decoration: underline;
+        }
+
+        .content-header a i {
+            margin-right: 0.5rem;
+        }
+
+        .booking-card {
+            display: flex;
+            background-color: #C6F6D5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .booking-card img {
+            height: 150px;
+            width: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .booking-card p {
+            margin: 5px 0;
+        }
+
+        .details-button {
+            background-color: #48BB78;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .page-button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background-color: #32BB88;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .page-button:hover {
+            background-color: #22c55e;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <a href="index.html"><img src="img/icon.png" alt="Travel logo"></a>
+            <span>Travel</span>
+        </div>
+        <div class="section-title">USER</div>
+        <a href="user_profile.html"><i class="fas fa-user"></i> PROFILE</a>
+        <a href="user_security.html"><i class="fas fa-shield-alt"></i> SECURITY</a>
+        <div class="section-title">ACTIVITIES</div>
+        <a href="user_booking.html"><i class="fas fa-book"></i> MY BOOKINGS</a>
+        <a href="user_review.html"><i class="fas fa-star"></i> MY REVIEWS</a>
+        <a href="user_favourite.html"><i the="fas fa-heart"></i> MANAGE FAVOURITES</a>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <h1>My Bookings</h1>
+            <select class="p-2 bg-white border border-gray-300 rounded">
+                <option>Date (Earliest)</option>
+                <option>Price</option>
+                <option>rating</option>
+            </select>
+        </div>
+
+        <div id="booking-container">
+            <div class="booking-card">
+                <img src="https://placehold.co/150x150.png?text=Bicycle+Tour+Image&bg=70a1a1" alt="Bicycle tour image">
+                <div>
+                    <p>(Difficulty) X-day tour</p>
+                    <p>Booked: 16/12/2023</p>
+                    <p>Start date: 5/3/2024</p>
+                    <button class="details-button">Details</button>
+                </div>
+            </div>
+            <div class="booking-card">
+                <img src="https://placehold.co/150x150.png?text=Bicycle+Tour+Image&bg=70a1a1" alt="Bicycle tour image">
+                <div>
+                    <p>(Difficulty) X-day tour</p>
+                    <p>Booked: 16/12/2023</p>
+                    <p>Start date: 5/3/2024</p>
+                    <button class="details-button">Details</button>
+                </div>
+            </div>
+            <div class="booking-card">
+                <img src="https://placehold.co/150x150.png?text=Bicycle+Tour+Image&bg=70a1a1" alt="Bicycle tour image">
+                <div>
+                    <p>(Difficulty) X-day tour</p>
+                    <p>Booked: 16/12/2023</p>
+                    <p>Start date: 5/3/2024</p>
+                    <button class="details-button">Details</button>
+                </div>
+            </div>
+            <div class="booking-card hidden">
+                <img src="https://placehold.co/150x150.png?text=Bicycle+Tour+Image&bg=70a1a1" alt="Bicycle tour image">
+                <div>
+                    <p>AOSDHKJADJKD</p>
+                    <p>Booked: 16/12/2023</p>
+                    <p>Start date: 5/3/2024</p>
+                    <button class="details-button">Details</button>
+                </div>
+            </div>
+            <div class="booking-card hidden">
+                <img src="https://placehold.co/150x150.png?text=Bicycle+Tour+Image&bg=70a1a1" alt="Bicycle tour image">
+                <div>
+                    <p>(ADSSDSD)X-day tour</p>
+                    <p>Booked: 16/12/2023</p>
+                    <p>Start date: 5/3/2024</p>
+                    <button class="details-button">Details</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button class="page-button" onclick="changePage(-1)" id="prev-btn">Previous</button>
+            <button class="page-button" onclick="changePage(1)" id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const cardsPerPage = 3;
+        let currentPage = 1;
+        const cards = document.querySelectorAll(".booking-card");
+        const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+        function updateVisibility() {
+            cards.forEach((card, index) => {
+                card.classList.add('hidden');
+                if (index >= (currentPage - 1) * cardsPerPage && index < currentPage * cardsPerPage) {
+                    card.classList.remove('hidden');
+                }
+            });
+            document.getElementById("prev-btn").disabled = currentPage === 1;
+            document.getElementById("next-btn").disabled = currentPage === totalPages;
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            updateVisibility();
+        }
+
+        updateVisibility();
+    </script>
+</body>
+</html>
