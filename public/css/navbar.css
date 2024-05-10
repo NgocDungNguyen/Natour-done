@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #f7f7f7;
-    color: white;
+    color: black;
     padding: 0;
 }
 
@@ -32,15 +32,6 @@ body {
     background-color: #5d9a4c;
 }
 
-
-.sign-up {
-    background-color: #FE8403;
-}
-
-.log-in {
-    background-color: #FF8A00;
-}
-
 .section {
     display: flex;
     align-items: center;
@@ -57,14 +48,34 @@ body {
     justify-content: flex-end;
 }
 
-
 .section.left {
     background-color: #55C57A;
     margin-right: auto;
     padding-left: 0; /* Remove padding on the left */
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
 
+.logo-container img {
+    height: 50px;
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.logo-container span {
+    font-size: 20px;
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.sign-up {
+    background-color: #FE8403;
+}
+
+.log-in {
+    background-color: #FF8A00;
+}
 
 .dark-theme body {
     background-color: #121212;
