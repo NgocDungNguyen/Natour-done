@@ -68,3 +68,43 @@
     text-decoration: underline;
     color: #0056b3;
 }
+
+
+.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-theme .navbar, .dark-theme footer {
+    background-color: #222;
+    color: #ddd;
+}
+
+.dark-theme .login-container,
+.dark-theme footer {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-theme .login-container input[type="email"],
+.dark-theme .login-container input[type="password"] {
+    background-color: #555;
+    color: #ddd;
+    border-color: #666;
+}
+
+.dark-theme .login-container button {
+    background-color: #666;
+}
+
+.dark-theme .login-container a {
+    color: #bbdefb;
+}
+
+.dark-theme .login-container button:hover {
+    background-color: #62b457;
+}
+
+.dark-theme .login-container a:hover {
+    color: #82b1ff;
+}

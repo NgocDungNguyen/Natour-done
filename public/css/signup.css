@@ -1,0 +1,90 @@
+.signup-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px 10px 10px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+    background-color: #45a049;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    color: #ccc;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.relative {
+    position: relative;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    display: none;
+}
+
+
+
+/* Dark theme for signup container */
+
+.dark-theme {
+    background-color: #131212;
+    color: #f4f4f4;
+}
+
+.dark-theme .signup-container {
+    background: #333;
+    color: #3d772e;
+}
+
+.dark-theme .signup-form input[type="text"],
+.dark-theme .signup-form input[type="email"],
+.dark-theme .signup-form input[type="password"] {
+    background: #555;
+    color: #ddd;
+    border-color: #666;
+}
+
+.dark-theme .signup-form button {
+    background-image: linear-gradient(to right, #57a850, #146e1b);
+}
+
+.dark-theme .signup-form button:hover {
+    background-image: linear-gradient(to right, #777, #666);
+}
