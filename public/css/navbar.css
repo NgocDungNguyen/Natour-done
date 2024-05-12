@@ -23,13 +23,14 @@ body {
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 15px 20px; /* Increased padding for better click area */
-    margin: 0 5px;
+    
     border-radius: 5px;
     font-size: 20px; /* Increase font size */
 }
 
 .navbar a:hover, .navbar i:hover {
-    background-color: #5d9a4c;
+    background-color: #55C57A;
+    text-decoration: underline;
 }
 
 .section {
@@ -46,10 +47,11 @@ body {
 
 .section.right {
     justify-content: flex-end;
+    
 }
 
 .section.left {
-    background-color: #55C57A;
+    background-color: #FF8A00;
     margin-right: auto;
     padding-left: 0; /* Remove padding on the left */
 }
@@ -70,7 +72,8 @@ body {
 }
 
 .sign-up {
-    background-color: #FE8403;
+    background-color: #FF8A00;
+    margin: 0 5px;
 }
 
 .log-in {
@@ -116,4 +119,12 @@ body {
 /* Popup */
 .dark-theme .popup {
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.dark-theme .navbar a:hover,.dark-theme .navbar i:hover {
+    background-color: #2E854B;
+    text-decoration: underline;
+}
+.dark-theme .section.left, .dark-theme .sign-up, .dark-theme .log-in{
+    background-color: #e07800;
 }
