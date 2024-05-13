@@ -28,7 +28,8 @@
 }
 
 .login-container input[type="email"],
-.login-container input[type="password"] {
+.login-container input[type="password"],
+.login-container input[type="tel"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -39,9 +40,12 @@
 }
 
 .login-container input[type="email"]:focus,
-.login-container input[type="password"]:focus {
+.login-container input[type="password"]:focus,
+.login-container input[type="tel"]:focus {
     border-color: #32cd32;
 }
+
+
 
 .login-container button {
     width: 100%;
@@ -51,7 +55,8 @@
     border: none;
     border-radius: 50px; /* Elliptical shape */
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 1rem;
+    
 }
 
 .login-container button:hover {
@@ -73,12 +78,16 @@
 .dark-theme {
     background-color: #333;
     color: #f4f4f4;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .dark-theme .navbar, .dark-theme footer {
     background-color: #222;
     color: #ddd;
+    transition: background-color 1s ease-in-out;
 }
+
+
 
 .dark-theme .login-container,
 .dark-theme footer {
@@ -87,7 +96,8 @@
 }
 
 .dark-theme .login-container input[type="email"],
-.dark-theme .login-container input[type="password"] {
+.dark-theme .login-container input[type="password"],
+.dark-theme .login-container input[type="tel"] {
     background-color: #555;
     color: #ddd;
     border-color: #666;
@@ -107,4 +117,7 @@
 
 .dark-theme .login-container a:hover {
     color: #82b1ff;
+}
+.dark-theme .login-container button {
+    background-color: #4CAF50;
 }
