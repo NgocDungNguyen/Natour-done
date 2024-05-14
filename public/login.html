@@ -109,6 +109,29 @@
                 });
             });
         </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.querySelector('form');
+                
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Ngăn chặn hành động mặc định của nút submit
+                    
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    
+                    // Kiểm tra tên người dùng và mật khẩu
+                    if (email === 'admin@gmail.com' && password === '123') {
+                        // Nếu là tên người dùng và mật khẩu đúng, chuyển hướng đến trang "admin_users.html"
+                        window.location.href = 'admin_users.html';
+                    } else {
+                        // Nếu là tên người dùng và mật khẩu không đúng, có thể hiển thị thông báo hoặc xử lý khác tùy thuộc vào yêu cầu của bạn
+                        alert('Tên người dùng hoặc mật khẩu không đúng!');
+                    }
+                });
+            });
+        </script>
+        
 </body>
 </html>
       
