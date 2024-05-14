@@ -233,7 +233,7 @@
                         <td class="py-2 px-4 border-b">0123456789</td>
                         <td class="py-2 px-4 border-b">
                             <!-- Role dropdown -->
-                            <select class="role-select">
+                            <select class="role-select" data-original-role="user">
                                 <option value="user" selected>User</option>
                                 <option value="lead_guide">Lead Guide</option>
                                 <option value="guide">Guide</option>
@@ -253,7 +253,7 @@
                         <td class="py-2 px-4 border-b">0764346345</td>
                         <td class="py-2 px-4 border-b">
                             <!-- Role dropdown -->
-                            <select class="role-select">
+                            <select class="role-select" data-original-role="user">
                                 <option value="user" selected>User</option>
                                 <option value="lead_guide">Lead Guide</option>
                                 <option value="guide">Guide</option>
@@ -292,7 +292,7 @@
         var modal = document.getElementById('myModal');
         var modalText = document.getElementById('modalText');
         var confirmBtn = document.getElementById('confirmBtn');
-        var currentButton;
+        var currentButton, currentSelect, originalRole;
 
         loadUserRoles();
         loadUserStatus();
@@ -329,9 +329,26 @@
         });
 
         roleSelects.forEach(function(select) {
+            select.addEventListener('focus', function() {
+                originalRole = select.getAttribute('data-original-role');
+            });
             select.addEventListener('change', function() {
+                currentSelect = select;
+                var newRole = select.value;
                 var email = select.closest('tr').querySelector('td:nth-child(3)').textContent.trim();
-                updateUserRoleInLocalStorage(email, select.value);
+
+                if (newRole !== originalRole) {
+                    modalText.textContent = 'Do you want to change the role of this user?';
+                    modal.style.display = 'block';
+
+                    confirmBtn.onclick = function() {
+                        updateUserRoleInLocalStorage(email, newRole);
+                        select.setAttribute('data-original-role', newRole);
+                        modal.style.display = 'none';
+                    };
+                } else {
+                    updateUserRoleInLocalStorage(email, newRole);
+                }
             });
         });
 
@@ -390,6 +407,7 @@
             var role = localStorage.getItem(email + '_role');
             if (role) {
                 user.querySelector('select').value = role;
+                user.querySelector('select').setAttribute('data-original-role', role);
             }
         });
     }
