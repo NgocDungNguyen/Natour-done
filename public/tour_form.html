@@ -13,10 +13,13 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet" />
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <style>
-    .section-header input{
+    .section-header .heading-primary input{
       color:white !important;
       background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(125, 213, 111, 0.85)), to(rgba(40, 180, 135, 0.85)));
       padding:5px;
+    }
+    .section-header{
+      
     }
     .overview-box__group input{
 
@@ -67,6 +70,10 @@
 </div>
 
   <section class="section-header">
+    <div class="gradient-header" onclick="document.getElementById('upload-1').click();">
+      <input type="file" id="upload-1" class="file-uploader gradient-header" accept="image/*" style="display:none;" >
+      <img style="position:relative;width: 100%; height: 100%; z-index:-2; display:block;" class="picture-box__img--1" src="img/placeholder.png" alt="The Park Camper Tour 1" />
+    </div>
     <div class="heading-box">
       <h1 class="heading-primary">
         <input placeholder="Tour Name" onkeypress="this.style.width = (this.value.length +1) + 'ch';"> <br />
@@ -77,16 +84,17 @@
           <svg class="heading-box__icon">
             <use xlink:href="img/icons.svg#icon-clock"></use>
           </svg>
-          <span class="heading-box__text">10 days</span>
+          <input class="heading-box__text">days</input>
         </div>
         <div class="heading-box__detail">
           <svg class="heading-box__icon">
             <use xlink:href="img/icons.svg#icon-map-pin"></use>
           </svg>
-          <span class="heading-box__text">Las Vegas, USA</span>
+          <input class="heading-box__text"></input>
         </div>
       </div>
     </div>
+   
   </section>
 
   <section class="section-description">
@@ -128,14 +136,20 @@
           </div>
         </div>
 
-        <div class="overview-box__group">
+        <div class="overview-box__group-guide">
           <h2 class="heading-secondary ma-bt-lg">Your tour guides</h2>
 
           <div class="overview-box__detail">
             <img src="img/users/user-19.jpg" alt="Lead guide" class="overview-box__img" />
-            <span class="overview-box__label">Lead guide</span>
-            <span class="overview-box__text">Steven Miller</span>
+            <select class="overview-box__label">
+              <option value="Lead guide">Lead guide</option>
+              <option value="Tour guide">Tour guide</option>
+              <option value="Intern">Intern</option>
+            </select>
+            <input placeholder="Enter name" class="overview-box__text"></input>
           </div>
+          <button id="addGuideBtn" class="btn btn--green" style="color: #444;">Add New Guide</button>
+          <!--
           <div class="overview-box__detail">
             <img src="img/users/user-18.jpg" alt="Tour guide" class="overview-box__img" />
             <span class="overview-box__label">Tour guide</span>
@@ -145,8 +159,9 @@
             <img src="img/users/user-17.jpg" alt="Intern" class="overview-box__img" />
             <span class="overview-box__label">Intern</span>
             <span class="overview-box__text">Max Smith</span>
-          </div>
+          </div>-->
         </div>
+
       </div>
     </div>
 
@@ -167,16 +182,16 @@
       <img class="picture-box__img picture-box__img--3" src="img/tours/tour-5-3.jpg" alt="The Park Camper Tour 1" />
     </div>-->
     <div class="picture-box">
-      <input type="file" id="upload-1" class="file-uploader" accept="image/*" style="display:none;">
-      <img style="width: 33vw;" class="picture-box__img picture-box__img--1" src="img/placeholder.png" alt="The Park Camper Tour 1" onclick="document.getElementById('upload-1').click();"/>
-    </div>
-    <div class="picture-box">
-        <input type="file" id="upload-2" class="file-uploader" accept="image/*" style="display:none;">
-        <img style="width: 33vw;" class="picture-box__img picture-box__img--2" src="img/placeholder.png" alt="The Park Camper Tour 1" onclick="document.getElementById('upload-2').click();"/>
+      <input type="file" id="upload-2" class="file-uploader" accept="image/*" style="display:none;">
+      <img style="width: 33.33vw;" class="picture-box__img picture-box__img--2" src="img/placeholder.png" alt="The Park Camper Tour 1" onclick="document.getElementById('upload-2').click();"/>
     </div>
     <div class="picture-box">
         <input type="file" id="upload-3" class="file-uploader" accept="image/*" style="display:none;">
-        <img style="width: 33vw;" class="picture-box__img picture-box__img--3" src="img/placeholder.png" alt="The Park Camper Tour 1" onclick="document.getElementById('upload-3').click();"/>
+        <img style="width: 33.33vw;" class="picture-box__img picture-box__img--3" src="img/placeholder.png" alt="The Park Camper Tour 1" onclick="document.getElementById('upload-3').click();"/>
+    </div>
+    <div class="picture-box">
+        <input type="file" id="upload-4" class="file-uploader" accept="image/*" style="display:none;">
+        <img style="width: 33.33vw;" class="picture-box__img picture-box__img--4" src="img/placeholder.png" alt="The Park Camper Tour 1" onclick="document.getElementById('upload-4').click();"/>
     </div>
   </section>
 
@@ -534,6 +549,49 @@
             reader.readAsDataURL(file);
         }
     });
+});
+document.getElementById('addGuideBtn').addEventListener('click', function() {
+    // Container where new elements will be added
+    const container = document.querySelector('.overview-box__group-guide');
+
+    // Create a new detail div
+    const newDetail = document.createElement('div');
+    newDetail.classList.add('overview-box__detail');
+
+    // Add image (optional, remove if not needed)
+    const img = document.createElement('img');
+    img.src = 'img/users/user-19.jpg'; // Use a placeholder or a specific path
+    img.alt = 'Lead guide';
+    img.classList.add('overview-box__img');
+    newDetail.appendChild(img);
+
+    // Create the select element
+    const select = document.createElement('select');
+    select.classList.add('overview-box__label');
+    ['Lead guide', 'Tour guide', 'Intern'].forEach(function(role) {
+        const option = document.createElement('option');
+        option.value = role;
+        option.textContent = role;
+        select.appendChild(option);
+    });
+    newDetail.appendChild(select);
+
+    // Create the input element
+    const input = document.createElement('input');
+    input.placeholder = 'Enter name';
+    input.classList.add('overview-box__text');
+    newDetail.appendChild(input);
+    // Create the delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.onclick = function() {
+        newDetail.remove();
+    };
+    newDetail.appendChild(deleteBtn);
+
+    // Append the new detail div to the container
+    container.insertBefore(newDetail, this);  // Insert before the button
 });
 </script>
 
