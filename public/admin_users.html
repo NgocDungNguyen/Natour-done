@@ -10,164 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/vfs_fonts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tableexport@5.2.0/dist/js/tableexport.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        .sidebar {
-            background: linear-gradient(91deg, #7ED39A 0.56%, #32BB88 99.33%);
-            padding: 1rem;
-            width: 20rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .sidebar a {
-            color: black;
-            text-decoration: none;
-            padding: 1rem 1.5rem;
-            border-radius: 0.25rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-            font-size: 1.1rem;
-        }
-
-        .sidebar a:hover {
-            background-color: #22c55e;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-
-        .sidebar a i {
-            margin-right: 1rem;
-        }
-
-        .sidebar .section-title {
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: black;
-            width: 100%;
-            text-align: left;
-            padding: 10px;
-        }
-
-        .sidebar .logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-            color: black;
-        }
-
-        .sidebar .logo img {
-            width: 40px;
-            height: 40px;
-            margin-right: 1rem;
-        }
-
-        .content {
-            padding: 3rem;
-            flex: 1;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 2rem;
-            border-radius: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            overflow: auto;
-            max-height: calc(100vh - 4rem);
-        }
-
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
-            color: #22c55e;
-            font-size: 1.5rem;
-        }
-
-        .content-header h1 {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .content-header a {
-            color: #22c55e;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-        }
-
-        .content-header a:hover {
-            text-decoration: underline;
-        }
-
-        .content-header a i {
-            margin-right: 0.5rem;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .modal-content button {
-            margin: 5px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .modal-content .close {
-            background-color: #ccc;
-        }
-
-        .modal-content #confirmBtn {
-            background-color: #22c55e;
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 8px 16px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="css/admin_users.css">
 </head>
 
 <body>
@@ -182,7 +25,7 @@
 </div>
 <div class="content">
     <div class="content-header">
-        <h1>Manage User</h1>
+        <h1>Manage Users</h1>
         <a href="index.html"><i class="fas fa-home"></i> Back to home</a>
     </div>
 
@@ -197,12 +40,12 @@
                 <div class="relative">
                     <button class="bg-gray-200 px-4 py-2 rounded" id="columnVisibilityButton">Column visibility</button>
                     <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg hidden" id="columnVisibilityDropdown">
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Date</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Name</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Email</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Phone Number</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Approval</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Status</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Date">Date</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Name">Name</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Email">Email</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Phone Number">Phone Number</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Role">Role</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Status">Status</a>
                     </div>
                 </div>
             </div>
@@ -216,12 +59,12 @@
             <table id="userTable" class="min-w-full bg-white">
                 <thead>
                     <tr>
-                        <th class="py-2 px-4 border-b">Date</th>
-                        <th class="py-2 px-4 border-b">Name</th>
-                        <th class="py-2 px-4 border-b">Email</th>
-                        <th class="py-2 px-4 border-b">Phone Number</th>
-                        <th class="py-2 px-4 border-b">Role</th>
-                        <th class="py-2 px-4 border-b">Status</th>
+                        <th class="py-2 px-4 border-b" data-column="Date">Date</th>
+                        <th class="py-2 px-4 border-b" data-column="Name">Name</th>
+                        <th class="py-2 px-4 border-b" data-column="Email">Email</th>
+                        <th class="py-2 px-4 border-b" data-column="Phone Number">Phone Number</th>
+                        <th class="py-2 px-4 border-b" data-column="Role">Role</th>
+                        <th class="py-2 px-4 border-b" data-column="Status">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -233,11 +76,11 @@
                         <td class="py-2 px-4 border-b">0123456789</td>
                         <td class="py-2 px-4 border-b">
                             <!-- Role dropdown -->
-                            <select class="role-select" data-original-role="user">
-                                <option value="user" selected>User</option>
+                            <select class="role-select" data-original-role="admin">
+                                <option value="admin" selected>Admin</option>
                                 <option value="lead_guide">Lead Guide</option>
                                 <option value="guide">Guide</option>
-                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
                             </select>
                         </td>
                         <td class="py-2 px-4 border-b">
@@ -254,10 +97,10 @@
                         <td class="py-2 px-4 border-b">
                             <!-- Role dropdown -->
                             <select class="role-select" data-original-role="user">
-                                <option value="user" selected>User</option>
+                                <option value="admin">Admin</option>
                                 <option value="lead_guide">Lead Guide</option>
                                 <option value="guide">Guide</option>
-                                <option value="admin">Admin</option>
+                                <option value="user" selected>User</option>
                             </select>
                         </td>
                         <td class="py-2 px-4 border-b">
@@ -280,165 +123,8 @@
     </div>
 </div>
 
-<script>
-    document.getElementById('columnVisibilityButton').addEventListener('click', function() {
-        var dropdown = document.getElementById('columnVisibilityDropdown');
-        dropdown.classList.toggle('hidden');
-    });
+<script src ='js/admin_users.js'></script>
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var statusButtons = document.querySelectorAll('.status-btn');
-        var roleSelects = document.querySelectorAll('.role-select');
-        var modal = document.getElementById('myModal');
-        var modalText = document.getElementById('modalText');
-        var confirmBtn = document.getElementById('confirmBtn');
-        var currentButton, currentSelect, originalRole;
 
-        loadUserRoles();
-        loadUserStatus();
-
-        statusButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                currentButton = button;
-                var currentStatus = button.textContent.trim();
-                var email = button.closest('tr').querySelector('td:nth-child(3)').textContent.trim();
-
-                if (currentStatus === 'Active') {
-                    modalText.textContent = 'Are you sure you want to Ban this user?';
-                } else if (currentStatus === 'Banned') {
-                    modalText.textContent = 'Are you sure you want to Activate this user?';
-                }
-
-                modal.style.display = 'block';
-
-                confirmBtn.onclick = function() {
-                    var newStatus = currentStatus === 'Active' ? 'Banned' : 'Active';
-                    button.textContent = newStatus;
-                    button.dataset.status = newStatus;
-                    if (newStatus === 'Banned') {
-                        button.classList.remove('bg-green-500');
-                        button.classList.add('bg-red-500');
-                    } else {
-                        button.classList.remove('bg-red-500');
-                        button.classList.add('bg-green-500');
-                    }
-                    updateUserStatus(email, newStatus);
-                    modal.style.display = 'none';
-                };
-            });
-        });
-
-        roleSelects.forEach(function(select) {
-            select.addEventListener('focus', function() {
-                originalRole = select.getAttribute('data-original-role');
-            });
-            select.addEventListener('change', function() {
-                currentSelect = select;
-                var newRole = select.value;
-                var email = select.closest('tr').querySelector('td:nth-child(3)').textContent.trim();
-
-                if (newRole !== originalRole) {
-                    modalText.textContent = 'Do you want to change the role of this user?';
-                    modal.style.display = 'block';
-
-                    confirmBtn.onclick = function() {
-                        updateUserRoleInLocalStorage(email, newRole);
-                        select.setAttribute('data-original-role', newRole);
-                        modal.style.display = 'none';
-                    };
-                } else {
-                    updateUserRoleInLocalStorage(email, newRole);
-                }
-            });
-        });
-
-        window.onclick = function(event) {
-            if (event.target == modal || event.target.classList.contains('close')) {
-                modal.style.display = 'none';
-            }
-        };
-
-        document.getElementById('copyBtn').addEventListener('click', function() {
-            var table = document.getElementById('userTable');
-            var range = document.createRange();
-            range.selectNode(table);
-            window.getSelection().removeAllRanges(); 
-            window.getSelection().addRange(range);
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges();
-        });
-
-        document.getElementById('excelBtn').addEventListener('click', function() {
-            var table = document.getElementById('userTable');
-            var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet JS" });
-            XLSX.writeFile(wb, 'user-list.xlsx');
-        });
-
-        document.getElementById('pdfBtn').addEventListener('click', function() {
-            var table = document.getElementById('userTable');
-            var rows = [];
-            table.querySelectorAll('tr').forEach(function(row) {
-                var rowData = [];
-                row.querySelectorAll('th, td').forEach(function(cell) {
-                    rowData.push(cell.innerText);
-                });
-                rows.push(rowData);
-            });
-
-            var docDefinition = {
-                content: [
-                    {
-                        table: {
-                            headerRows: 1,
-                            body: rows
-                        }
-                    }
-                ]
-            };
-
-            pdfMake.createPdf(docDefinition).download('user-list.pdf');
-        });
-    });
-
-    function loadUserRoles() {
-        var users = document.querySelectorAll('tbody tr');
-        users.forEach(function(user) {
-            var email = user.querySelector('td:nth-child(3)').textContent.trim();
-            var role = localStorage.getItem(email + '_role');
-            if (role) {
-                user.querySelector('select').value = role;
-                user.querySelector('select').setAttribute('data-original-role', role);
-            }
-        });
-    }
-
-    function updateUserRoleInLocalStorage(email, role) {
-        localStorage.setItem(email + '_role', role);
-    }
-
-    function loadUserStatus() {
-        var users = document.querySelectorAll('tbody tr');
-        users.forEach(function(user) {
-            var email = user.querySelector('td:nth-child(3)').textContent.trim();
-            var status = localStorage.getItem(email + '_status');
-            if (status) {
-                var button = user.querySelector('.status-btn');
-                button.textContent = status;
-                button.dataset.status = status;
-                if (status === 'Banned') {
-                    button.classList.remove('bg-green-500');
-                    button.classList.add('bg-red-500');
-                } else {
-                    button.classList.remove('bg-red-500');
-                    button.classList.add('bg-green-500');
-                }
-            }
-        });
-    }
-
-    function updateUserStatus(email, status) {
-        localStorage.setItem(email + '_status', status);
-    }
-</script>
 </body>
 </html>

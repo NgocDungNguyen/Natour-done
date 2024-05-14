@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/vfs_fonts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tableexport@5.2.0/dist/js/tableexport.min.js"></script>
+    <link rel="stylesheet" href="css/admin_reviews.css">
+
+</head>
+
+<body>
+<div class="sidebar">
+    <div class="logo" style="scale: 1.5; padding-left: 1rem; padding-top: 1rem;">
+        <a href="index.html"><img src="img/icon.png" alt="Travel logo"><span>Travel</span></a>
+    </div>
+    <div class="section-title">ADMIN</div>
+    <a href="admin_users.html"><i class="fas fa-user"></i> MANAGE USERS</a>
+    <a href="admin_tours.html"><i class="fas fa-book"></i> MANAGES TOURS</a>
+    <a href="admin_reviews.html"><i class="fas fa-star"></i> MANAGE REVIEWS</a>
+</div>
+<div class="content">
+    <div class="content-header">
+        <h1>Manage Reviews</h1>
+        <a href="index.html"><i class="fas fa-home"></i> Back to home</a>
+    </div>
+
+    <div class="container mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-xl font-semibold mb-4">Review List</h1>
+        <p class="mb-6">Tour Reviews from Users</p>
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+                <button id="copyBtn" class="bg-gray-200 px-4 py-2 rounded">Copy</button>
+                <button id="excelBtn" class="bg-gray-200 px-4 py-2 rounded">Excel</button>
+                <button id="pdfBtn" class="bg-gray-200 px-4 py-2 rounded">PDF</button>
+                <div class="relative">
+                    <button class="bg-gray-200 px-4 py-2 rounded" id="columnVisibilityButton">Column visibility</button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg hidden" id="columnVisibilityDropdown">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Date">Date</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Tour Name">Tour Name</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="User Name">User Name</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Rating">Rating</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Review">Review</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" data-column="Action">Action</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <label for="search" class="block text-sm font-medium text-gray-700">Search:</label>
+                <input type="text" name="search" id="search" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+            </div>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table id="reviewTable" class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b cursor-pointer" data-column="Date">Date</th>
+                        <th class="py-2 px-4 border-b cursor-pointer" data-column="Tour Name">Tour Name</th>
+                        <th class="py-2 px-4 border-b cursor-pointer" data-column="User Name">User Name</th>
+                        <th class="py-2 px-4 border-b cursor-pointer" data-column="Rating">Rating</th>
+                        <th class="py-2 px-4 border-b cursor-pointer" data-column="Review">Review</th>
+                        <th class="py-2 px-4 border-b cursor-pointer" data-column="Action">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows -->
+                    <tr class="bg-gray-50">
+                        <td class="py-2 px-4 border-b">12-05-2024</td>
+                        <td class="py-2 px-4 border-b">City Tour</td>
+                        <td class="py-2 px-4 border-b">John Doe</td>
+                        <td class="py-2 px-4 border-b">
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </td>
+                        <td class="py-2 px-4 border-b">Great tour, highly recommend!</td>
+                        <td class="py-2 px-4 border-b action-buttons">
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr class="bg-white">
+                        <td class="py-2 px-4 border-b">15-05-2024</td>
+                        <td class="py-2 px-4 border-b">Mountain Hike</td>
+                        <td class="py-2 px-4 border-b">Jane Smith</td>
+                        <td class="py-2 px-4 border-b">
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </td>
+                        <td class="py-2 px-4 border-b">Challenging but rewarding experience.</td>
+                        <td class="py-2 px-4 border-b action-buttons">
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="bg-white">
+                        <td class="py-2 px-4 border-b">20-05-2024</td>
+                        <td class="py-2 px-4 border-b">Bear Riding</td>
+                        <td class="py-2 px-4 border-b">Mohammed Sati</td>
+                        <td class="py-2 px-4 border-b">
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </td>
+                        <td class="py-2 px-4 border-b">Exciting but a bit scary.</td>
+                        <td class="py-2 px-4 border-b action-buttons">
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalText"></p>
+        <button id="confirmBtn">Yes</button>
+        <button class="close">No</button>
+    </div>
+</div>
+
+<script src ='js/admin_reviews.js'></script>
+
+</body>
+</html>
