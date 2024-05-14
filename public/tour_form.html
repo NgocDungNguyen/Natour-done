@@ -84,13 +84,13 @@
           <svg class="heading-box__icon">
             <use xlink:href="img/icons.svg#icon-clock"></use>
           </svg>
-          <span class="heading-box__text">10 days</span>
+          <input class="heading-box__text">days</input>
         </div>
         <div class="heading-box__detail">
           <svg class="heading-box__icon">
             <use xlink:href="img/icons.svg#icon-map-pin"></use>
           </svg>
-          <span class="heading-box__text">Las Vegas, USA</span>
+          <input class="heading-box__text"></input>
         </div>
       </div>
     </div>
@@ -136,14 +136,20 @@
           </div>
         </div>
 
-        <div class="overview-box__group">
+        <div class="overview-box__group-guide">
           <h2 class="heading-secondary ma-bt-lg">Your tour guides</h2>
 
           <div class="overview-box__detail">
             <img src="img/users/user-19.jpg" alt="Lead guide" class="overview-box__img" />
-            <span class="overview-box__label">Lead guide</span>
-            <span class="overview-box__text">Steven Miller</span>
+            <select class="overview-box__label">
+              <option value="Lead guide">Lead guide</option>
+              <option value="Tour guide">Tour guide</option>
+              <option value="Intern">Intern</option>
+            </select>
+            <input placeholder="Enter name" class="overview-box__text"></input>
           </div>
+          <button id="addGuideBtn" class="btn">Add New Guide</button>
+          <!--
           <div class="overview-box__detail">
             <img src="img/users/user-18.jpg" alt="Tour guide" class="overview-box__img" />
             <span class="overview-box__label">Tour guide</span>
@@ -153,8 +159,9 @@
             <img src="img/users/user-17.jpg" alt="Intern" class="overview-box__img" />
             <span class="overview-box__label">Intern</span>
             <span class="overview-box__text">Max Smith</span>
-          </div>
+          </div>-->
         </div>
+
       </div>
     </div>
 
@@ -542,6 +549,49 @@
             reader.readAsDataURL(file);
         }
     });
+});
+document.getElementById('addGuideBtn').addEventListener('click', function() {
+    // Container where new elements will be added
+    const container = document.querySelector('.overview-box__group-guide');
+
+    // Create a new detail div
+    const newDetail = document.createElement('div');
+    newDetail.classList.add('overview-box__detail');
+
+    // Add image (optional, remove if not needed)
+    const img = document.createElement('img');
+    img.src = 'img/users/user-19.jpg'; // Use a placeholder or a specific path
+    img.alt = 'Lead guide';
+    img.classList.add('overview-box__img');
+    newDetail.appendChild(img);
+
+    // Create the select element
+    const select = document.createElement('select');
+    select.classList.add('overview-box__label');
+    ['Lead guide', 'Tour guide', 'Intern'].forEach(function(role) {
+        const option = document.createElement('option');
+        option.value = role;
+        option.textContent = role;
+        select.appendChild(option);
+    });
+    newDetail.appendChild(select);
+
+    // Create the input element
+    const input = document.createElement('input');
+    input.placeholder = 'Enter name';
+    input.classList.add('overview-box__text');
+    newDetail.appendChild(input);
+    // Create the delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.onclick = function() {
+        newDetail.remove();
+    };
+    newDetail.appendChild(deleteBtn);
+
+    // Append the new detail div to the container
+    container.insertBefore(newDetail, this);  // Insert before the button
 });
 </script>
 
