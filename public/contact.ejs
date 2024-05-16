@@ -18,30 +18,8 @@
  </head>
 
   <body>
-    <div class="navbar">
-      <div class="section left">
-        <a href="index.html">
-          <div class="logo-container">
-            <img alt="Travel logo" src="img/icon.png" />
-            <span>Travel</span>
-          </div>
-        </a>
-      </div>
-      <div class="section middle">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="overview.html">Tours</a>
-        <a class="active" href="contact.html">Contact</a>
-      </div>
-      <div class="section right">
-        <a class="favorites" href="favourites.html">
-          <i class="fas fa-heart text-yellow-500"></i> Favourites
-        </a>
-        <i class="fas fa-sun text-yellow-500 theme-toggle"></i>
-        <a class="sign-up" href="signup.html">Sign Up</a>
-        <a class="log-in" href="login.html">Log In</a>
-      </div>
-    </div>
+    <% include navbar.ejs %>
+
 
 
     <section class="ftco-section">
@@ -139,45 +117,8 @@
 
 
 
-    <footer class="bg-gray-200 text-gray-800 px-20 py-16 w-full border-t-4 border-gray-400">
-      <div class="max-w-screen-xl mx-auto flex justify-between items-start">
-        <div class="space-y-8 w-1/4">
-          <a href="#">
-            <img
-              alt="Travel logo with a globe and airplane silhouette"
-              class="w-48"
-              src="img/icon.png"
-            />
-          </a>
-          <a class="text-base text-gray-600" href="#">
-            Lorem ipsum is simply dummy text for industry
-          </a>
-          <div>
-            <a class="font-bold text-base text-gray-800" href="#">Call for info:</a>
-            <a class="text-base text-gray-800" href="#">+03 80 902 399</a>
-          </div>
-        </div>
-        <div class="space-y-4 w-1/4">
-          <h3 class="font-bold text-xl text-gray-800">Company</h3>
-          <a class="text-base text-gray-800 block" href="#">&gt; About Us</a>
-          <a class="text-base text-gray-800 block" href="#">&gt; Company</a>
-          <a class="text-base text-gray-800 block" href="#">&gt; Press &amp; Blog</a>
-          <a class="text-base text-gray-800 block" href="#">&gt; Privacy Policy</a>
-        </div>
-        <div class="space-y-4 w-1/4">
-          <h3 class="font-bold text-xl text-gray-800">Quick Link</h3>
-          <a class="text-base text-gray-800 block" href="#">&gt; Press Centre</a>
-          <a class="text-base text-gray-800 block" href="#">&gt; Travel Centre</a>
-          <a class="text-base text-gray-800 block" href="#">&gt; About Us</a>
-          <a class="text-base text-gray-800 block" href="#">&gt; Privacy Policy</a>
-        </div>
-        <div class="space-y-4 w-1/4">
-          <h3 class="font-bold text-xl text-gray-800">From Twitter</h3>
-          <a class="text-base text-gray-800 block" href="#">@twitter feeds</a>
-          <a class="text-base text-gray-800 block" href="#">@twitter feeds</a>
-        </div>
-      </div>
-    </footer>
+  <%- include('footer') -%>
+
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
