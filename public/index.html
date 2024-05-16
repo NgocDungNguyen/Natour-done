@@ -12,6 +12,191 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         <title>Travel | Exciting tours for adventurous people</title>
+
+        <style>
+
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+                color: black;
+            }
+            
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #f7f7f7;
+                color: black;
+                padding: 0;
+            }
+            
+            .navbar img {
+                height: 50px;
+            }
+            
+            .navbar a, .navbar i {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                padding: 15px 20px; /* Increased padding for better click area */
+                
+                border-radius: 5px;
+                font-size: 20px; /* Increase font size */
+            }
+            
+            .navbar a:hover, .navbar i:hover {
+                background-color: #55C57A;
+                text-decoration: underline;
+            }
+            
+            .section {
+                display: flex;
+                align-items: center;
+            }
+            
+            .section.middle {
+                flex-grow: 1;
+                justify-content: center;
+                border-right: 2px solid #555; /* Add right border to separate middle and right sections */
+                color: beige;
+            }
+            
+            .section.right {
+                justify-content: flex-end;
+                
+            }
+            
+            .section.left {
+                background-color: #FF8A00;
+                margin-right: auto;
+                padding-left: 0; /* Remove padding on the left */
+            }
+            
+            .logo-container {
+                display: flex;
+                align-items: center;
+            }
+            
+            .logo-container img {
+                height: 50px;
+                margin-right: 10px; /* Adjust margin as needed */
+            }
+            
+            .logo-container span {
+                font-size: 20px;
+                margin-right: 10px; /* Adjust margin as needed */
+            }
+            
+            .sign-up {
+                background-color: #FF8A00;
+                margin: 0 5px;
+            }
+            
+            .log-in {
+                background-color: #FF8A00;
+            }
+            
+            .dark-theme body {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+            
+            /* Navbar */
+            .dark-theme .navbar {
+                background-color: #333;
+            }
+            
+            .dark-theme .navbar a {
+                color: #e0e0e0;
+            }
+            
+            .dark-theme .navbar .fa-star,
+            .dark-theme .navbar .fa-sun,
+            .dark-theme .navbar .fa-moon {
+                color: #e0e0e0;
+            }
+            
+            /* Header */
+            .dark-theme .header {
+                background-color: #333;
+            }
+            
+            /* Features */
+            .dark-theme .feature-box {
+                background-color: #444;
+            }
+            
+            /* Cards */
+            .dark-theme .card__side--front {
+                background-color: #333;
+                color: #e0e0e0;
+            }
+            
+            /* Popup */
+            .dark-theme .popup {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+            
+            .dark-theme .navbar a:hover,.dark-theme .navbar i:hover {
+                background-color: #2E854B;
+                text-decoration: underline;
+            }
+            .dark-theme .section.left, .dark-theme .sign-up, .dark-theme .log-in{
+                background-color: #e07800;
+            }
+
+            .footer {
+                background-color: #333;
+                color: #f7f7f7;
+                padding: 40px 20px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+              }
+              
+              .footer .footer-section {
+                flex: 1;
+                min-width: 250px;
+                margin: 10px;
+              }
+              
+              .footer .footer-section h3 {
+                margin-bottom: 20px;
+              }
+              
+              .footer .footer-section a {
+                color: #f7f7f7;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 10px;
+              }
+              
+              .footer .footer-section a:hover {
+                text-decoration: underline;
+              }
+              
+              .footer .social-icons a {
+                font-size: 24px;
+                margin-right: 10px;
+              }
+              
+              .footer .social-icons a:hover {
+                color: #5d9a4c;
+              }
+              
+              /* Dark Theme */
+              .dark-theme footer {
+                background-color: #2a2a2a;
+                color: #e0e0e0;
+              }
+              
+              .dark-theme footer a {
+                color: #e0e0e0;
+              }
+              
+
+        </style>
     </head>
 
     <body>

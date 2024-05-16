@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="img/favicon.png" rel="shortcut icon" type="image/png"/>
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <title>Contact Us</title>
+ </head>
+
+  <body>
+    <div class="navbar">
+      <div class="section left">
+        <a href="index.html">
+          <div class="logo-container">
+            <img alt="Travel logo" src="img/icon.png" />
+            <span>Travel</span>
+          </div>
+        </a>
+      </div>
+      <div class="section middle">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="overview.html">Tours</a>
+        <a class="active" href="contact.html">Contact</a>
+      </div>
+      <div class="section right">
+        <a class="favorites" href="favourites.html">
+          <i class="fas fa-heart text-yellow-500"></i> Favourites
+        </a>
+        <i class="fas fa-sun text-yellow-500 theme-toggle"></i>
+        <a class="sign-up" href="signup.html">Sign Up</a>
+        <a class="log-in" href="login.html">Log In</a>
+      </div>
+    </div>
+
+
+    <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row no-gutters">
+							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<div id="form-message-warning" class="mb-4"></div> 
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+                  <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="php/sendEmail.php">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Full Name</label>
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-6"> 
+												<div class="form-group">
+													<label class="label" for="email">Email Address</label>
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Subject</label>
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">Message</label>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Send Message" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
+									<h3>Let's get in touch</h3>
+									<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-map-marker"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-phone"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-paper-plane"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-globe"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+					          </div>
+				          </div>
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+    <footer class="bg-gray-200 text-gray-800 px-20 py-16 w-full border-t-4 border-gray-400">
+      <div class="max-w-screen-xl mx-auto flex justify-between items-start">
+        <div class="space-y-8 w-1/4">
+          <a href="#">
+            <img
+              alt="Travel logo with a globe and airplane silhouette"
+              class="w-48"
+              src="img/icon.png"
+            />
+          </a>
+          <a class="text-base text-gray-600" href="#">
+            Lorem ipsum is simply dummy text for industry
+          </a>
+          <div>
+            <a class="font-bold text-base text-gray-800" href="#">Call for info:</a>
+            <a class="text-base text-gray-800" href="#">+03 80 902 399</a>
+          </div>
+        </div>
+        <div class="space-y-4 w-1/4">
+          <h3 class="font-bold text-xl text-gray-800">Company</h3>
+          <a class="text-base text-gray-800 block" href="#">&gt; About Us</a>
+          <a class="text-base text-gray-800 block" href="#">&gt; Company</a>
+          <a class="text-base text-gray-800 block" href="#">&gt; Press &amp; Blog</a>
+          <a class="text-base text-gray-800 block" href="#">&gt; Privacy Policy</a>
+        </div>
+        <div class="space-y-4 w-1/4">
+          <h3 class="font-bold text-xl text-gray-800">Quick Link</h3>
+          <a class="text-base text-gray-800 block" href="#">&gt; Press Centre</a>
+          <a class="text-base text-gray-800 block" href="#">&gt; Travel Centre</a>
+          <a class="text-base text-gray-800 block" href="#">&gt; About Us</a>
+          <a class="text-base text-gray-800 block" href="#">&gt; Privacy Policy</a>
+        </div>
+        <div class="space-y-4 w-1/4">
+          <h3 class="font-bold text-xl text-gray-800">From Twitter</h3>
+          <a class="text-base text-gray-800 block" href="#">@twitter feeds</a>
+          <a class="text-base text-gray-800 block" href="#">@twitter feeds</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', function () {
+          document.body.classList.toggle('dark-theme');
+          const icon = themeToggle;
+          if (document.body.classList.contains('dark-theme')) {
+            icon.classList.remove('fa-sun', 'text-yellow-500');
+            icon.classList.add('fa-moon', 'text-blue-500');
+          } else {
+            icon.classList.remove('fa-moon', 'text-blue-500');
+            icon.classList.add('fa-sun', 'text-yellow-500');
+          }
+        });
+      });
+    </script>
+    
+  </body>
+</html>
