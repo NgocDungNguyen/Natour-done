@@ -1,4 +1,4 @@
-
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -218,4 +218,83 @@ button[type="submit"]:hover {
 
 .hidden {
     display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+        width: 100%;
+    }
+
+    .sidebar a, .sidebar .section-title, .sidebar .logo {
+        text-align: left;
+    }
+
+    .sidebar .section-title {
+        padding-left: 1.5rem;
+    }
+
+    .content {
+        margin: 2rem 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #333;
+        z-index: 1000;
+        padding-top: 60px;
+    }
+
+    .sidebar .logo, .sidebar .section-title {
+        color: white;
+    }
+
+    .sidebar a {
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info div {
+        margin-top: 1rem;
+    }
+
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content-header h1 {
+        margin-bottom: 1rem;
+    }
 }
