@@ -8311,3 +8311,8 @@
     font-size: 16px;
     font-weight: bold; }
   
+
+    .dark-theme .ftco-section {
+      background-color: #131212;
+      color: #f4f4f4;
+  }

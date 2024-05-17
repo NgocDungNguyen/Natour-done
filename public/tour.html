@@ -20,7 +20,54 @@
 </head>
 
 <body>
-  <% include navbar.ejs %>
+  <div class="navbar">
+    <div class="section left">
+      <a href="index.html">
+        <div class="logo-container">
+          <img src="img/icon.png" alt="Travel logo">
+          <span>Travel</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="section middle">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="overview.html">Tours</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="section right">
+      <a href="user_favourites.html" class="favorites">
+        <i class="fas fa-heart text-yellow-500"></i> Favourites
+      </a>
+      <i class="fas fa-sun text-yellow-500 theme-toggle"></i>
+      <a href="signup.html" class="sign-up">Sign Up</a>
+      <a href="login.html" class="log-in">Log In</a>
+    </div>            
+  </div>
+
+  <!-- Mobile Navbar -->
+  <div class="mobile-navbar bg-white border-t border-black fixed bottom-0 w-full z-50">
+    <div class="flex justify-around py-4">
+      <a href="index.html" class="flex flex-col items-center">
+        <i class="fas fa-home text-2xl"></i>
+        <span class="mt-2 text-sm">Home</span>
+      </a>
+      <a href="overview.html" class="flex flex-col items-center">
+        <i class="fas fa-suitcase text-2xl"></i>
+        <span class="mt-2 text-sm">Tours</span>
+      </a>
+      <a href="user_favourites.html" class="flex flex-col items-center">
+        <i class="fas fa-star text-2xl"></i>
+        <span class="mt-2 text-sm">Favourites</span>
+      </a>
+      <a href="user_profile.html" class="flex flex-col items-center">
+        <i class="fas fa-user text-2xl"></i>
+        <span class="mt-2 text-sm">Profile</span>
+      </a>
+    </div>
+  </div>
 
 
   <section class="section-header">
@@ -424,7 +471,35 @@
     </div>
   </section>
 
-  <%- include('footer') -%>
+  <footer class="bg-gray-200 text-gray-800 px-20 py-16 w-full border-t-4 border-gray-400">
+    <div class="max-w-screen-xl mx-auto flex flex-wrap justify-between items-start">
+      <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
+        <a href="#"><img src="img/icon.png" alt="Travel logo with a globe and airplane silhouette" class="w-48 mx-auto md:mx-0"></a>
+        <p class="text-base text-gray-600 mt-4">Lorem ipsum is simply dummy text for industry</p>
+        <div class="mt-4">
+          <p class="font-bold text-base text-gray-800">Call for info:</p>
+          <p class="text-base text-gray-800">+03 80 902 399</p>
+        </div>
+      </div>
+      <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
+        <h3 class="font-bold text-xl text-gray-800">Company</h3>
+        <a href="#" class="text-base text-gray-800 block mt-2">About Us</a>
+        <a href="#" class="text-base text-gray-800 block mt-2">Company</a>
+        <a href="#" class="text-base text-gray-800 block mt-2">Press & Blog</a>
+        <a href="#" class="text-base text-gray-800 block mt-2">Privacy Policy</a>
+      </div>
+      <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
+        <h3 class="font-bold text-xl text-gray-800">Quick Link</h3>
+        <a href="#" class="text-base text-gray-800 block mt-2">Press Centre</a>
+        <a href="#" class="text-base text-gray-800 block mt-2">Travel Centre</a>
+        <a href="#" class="text-base text-gray-800 block mt-2">About Us</a>
+        <a href="#" class="text-base text-gray-800 block mt-2">Privacy Policy</a>
+      </div>
+      <div class="footer-section w-full md:w-1/4 text-center md:text-left">
+        <h3 class="font-bold text-xl text-gray-800">Join Us Now</h3>
+      </div>
+    </div>
+  </footer>
 
 
 <script>
