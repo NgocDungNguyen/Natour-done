@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
     <div class="sidebar">
         <div class="logo">
             <a href="index.html"><img src="img/icon.png" alt="Travel logo"></a>
@@ -38,9 +42,9 @@
                 </label>
             </div>
             <div>
-                <div class="name" id="display-name">Abcd</div>
-                <div class="email" id="display-email">abcd@example.com <i class="fas fa-check-circle"></i></div>
-                <div class="phone" id="display-phone">+123456789</div>
+                <div class="name" id="display-name">User Name</div>
+                <div class="email" id="display-email">username@gmail.com <i class="fas fa-check-circle"></i></div>
+                <div class="phone" id="display-phone">None</div>
             </div>
         </div>
 
@@ -48,22 +52,22 @@
         <form id="user-form">
             <div class="form-group">
                 <label for="name">Name</label>
-                <div class="value" id="name-value">Abcd</div>
-                <input type="text" id="name" class="hidden" value="Abcd">
+                <div class="value" id="name-value">User Name</div>
+                <input type="text" id="name" class="hidden" value="User Name">
                 <button class="change-btn" type="button" onclick="toggleEdit('name')">Update</button>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <div class="email-input">
-                    <div class="value" id="email-value">abcd@example.com <i class="fas fa-check-circle"></i></div>
-                    <input type="email" id="email" class="hidden" value="abcd@example.com">
+                    <div class="value" id="email-value">username@gmail.com <i class="fas fa-check-circle"></i></div>
+                    <input type="email" id="email" class="hidden" value="username@gmail.com">
                 </div>
                 <button class="change-btn" type="button" onclick="toggleEdit('email')">Update</button>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <div class="value" id="phone-value">+123456789</div>
-                <input type="tel" id="phone" class="hidden" placeholder="Enter your phone number" value="+123456789">
+                <div class="value" id="phone-value">None</div>
+                <input type="tel" id="phone" class="hidden" placeholder="Enter your phone number" value="None">
                 <button class="change-btn" type="button" onclick="toggleEdit('phone')">Update</button>
             </div>
             <div class="form-group">
@@ -131,6 +135,14 @@
                 toggleEdit('name');
                 toggleEdit('email');
                 toggleEdit('phone');
+            });
+
+            // Hamburger menu logic
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const sidebar = document.querySelector('.sidebar');
+
+            hamburgerMenu.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
             });
         });
     </script>
