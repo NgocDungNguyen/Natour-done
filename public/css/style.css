@@ -337,6 +337,8 @@ body {
   height: 38vw;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--section-rotate)), 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--section-rotate)), 0 100%);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126,213,111,0.8)), to(rgba(40,180,133,0.8))),url(../img/nat-10.jpg);
+
 }
 .gradient-header{
   position: absolute;
@@ -1461,7 +1463,7 @@ body {
 
 
 @media only screen and (max-width: 600px) {
-  .card-container{
+  .card-container {
   max-width: 120rem;
   margin: 0 auto;
   display: grid;
@@ -1474,5 +1476,43 @@ body {
   -ms-flex-item-align: center;
   align-self: center;
   text-align: center;
+  }
+  
+  .section-header{
+    display: block;
+    height: 400px;
+  }
+  .heading-primary {
+    width: 100%;
+    
+  }
+  .section-description{
+    flex-direction: column;
+  }
+  .section-description > * {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .overview-box__group{
+    text-align: center; /* Center horizontally */
+  }
+  .overview-box__label {
+  margin-right: 0rem;
+  }
+  .overview-box__icon, .overview-box__img{
+    margin-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .section-pictures{
+    flex-direction: column;
+  } /*straight up cant fix the pictures, we need to only do 1 pic at a time*/
+  .picture-box__img{
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+  }
+
 }
-}
+
