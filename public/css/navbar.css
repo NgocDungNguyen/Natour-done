@@ -77,6 +77,16 @@ body {
   .log-in {
     background-color: #FF8A00;
   }
+
+  .navbar .section a.active,
+.mobile-navbar a.active {
+  color: #007bff; /* Màu nổi bật cho liên kết active */
+}
+
+.navbar .section a:hover,
+.mobile-navbar a:hover {
+  color: #0056b3; /* Màu khi hover */
+}
   
   .dark-theme body {
     background-color: #121212;

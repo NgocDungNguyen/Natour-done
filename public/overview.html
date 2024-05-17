@@ -439,24 +439,33 @@
   </footer>
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
       const themeToggle = document.querySelector('.theme-toggle');
-
       themeToggle.addEventListener('click', function() {
-          document.body.classList.toggle('dark-theme');
-          const icon = themeToggle;
-
-          if (document.body.classList.contains('dark-theme')) {
-              icon.classList.remove('fa-sun', 'text-yellow-500');
-              icon.classList.add('fa-moon', 'text-blue-500');
-          } else {
-              icon.classList.remove('fa-moon', 'text-blue-500');
-              icon.classList.add('fa-sun', 'text-yellow-500');
-          }
+        document.body.classList.toggle('dark-theme');
+        const icon = themeToggle;
+        if (document.body.classList.contains('dark-theme')) {
+          icon.classList.remove('fa-sun', 'text-yellow-500');
+          icon.classList.add('fa-moon', 'text-blue-500');
+        } else {
+          icon.classList.remove('fa-moon', 'text-blue-500');
+          icon.classList.add('fa-sun', 'text-yellow-500');
+        }
       });
-  });
-</script>
+
+      const currentPath = window.location.pathname.split('/').pop();
+      const links = document.querySelectorAll('.navbar .section a, .mobile-navbar a');
+
+      links.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 
