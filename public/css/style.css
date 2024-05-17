@@ -1088,6 +1088,9 @@ body {
   grid-gap: 7rem;
 }
 
+
+
+
 .card {
   border-radius: 3px;
   overflow: hidden;
@@ -1454,4 +1457,22 @@ body {
   .btn {
     width: 100%;
   }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .card-container{
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  }
+  .card .btn-small,
+  .card .btn {
+  grid-row: 1 / 3;
+  justify-self: end;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+}
 }
