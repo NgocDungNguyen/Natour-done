@@ -128,10 +128,21 @@ body {
     background-color: #e07800;
   }
 
+
+
   /* Mobile Navbar */
 .mobile-navbar {
     display: none;
     z-index: 1000;
+  }
+
+  .dark-theme .mobile-navbar {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-theme .mobile-navbar a {
+    color: #fff;
   }
 
 
