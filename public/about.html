@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -8,211 +8,165 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
   <link href="img/favicon.png" rel="shortcut icon" type="image/png"/>
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/footer.css" />
   <title>About Us</title>
- </head>
- <body>
+  <style>
+    @media (max-width: 768px) {
+      .main-section .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
   <div class="navbar">
     <div class="section left">
       <a href="index.html">
         <div class="logo-container">
-          <img src="img/icon.png" alt="Travel logo">
+          <img alt="Travel logo" src="img/icon.png"/>
           <span>Travel</span>
         </div>
       </a>
     </div>
-
     <div class="section middle">
-      <a href="index.html" class="active">Home</a>
+      <a class="active" href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="overview.html">Tours</a>
       <a href="contact.html">Contact</a>
     </div>
-
     <div class="section right">
-      <a href="user_favourites.html" class="favorites">
+      <a class="favorites" href="user_favourites.html">
         <i class="fas fa-heart text-yellow-500"></i> Favourites
       </a>
       <i class="fas fa-sun text-yellow-500 theme-toggle"></i>
-      <a href="signup.html" class="sign-up">Sign Up</a>
-      <a href="login.html" class="log-in">Log In</a>
-    </div>            
+      <a class="sign-up" href="signup.html">Sign Up</a>
+      <a class="log-in" href="login.html">Log In</a>
+    </div>
   </div>
-
+  
   <!-- Mobile Navbar -->
   <div class="mobile-navbar bg-white border-t border-black fixed bottom-0 w-full z-50">
     <div class="flex justify-around py-4">
-      <a href="index.html" class="flex flex-col items-center">
+      <a class="flex flex-col items-center" href="index.html">
         <i class="fas fa-home text-2xl"></i>
         <span class="mt-2 text-sm">Home</span>
       </a>
-      <a href="overview.html" class="flex flex-col items-center">
+      <a class="flex flex-col items-center" href="overview.html">
         <i class="fas fa-suitcase text-2xl"></i>
         <span class="mt-2 text-sm">Tours</span>
       </a>
-      <a href="user_favourites.html" class="flex flex-col items-center">
+      <a class="flex flex-col items-center" href="user_favourites.html">
         <i class="fas fa-star text-2xl"></i>
         <span class="mt-2 text-sm">Favourites</span>
       </a>
-      <a href="user_profile.html" class="flex flex-col items-center">
+      <a class="flex flex-col items-center" href="user_profile.html">
         <i class="fas fa-user text-2xl"></i>
         <span class="mt-2 text-sm">Profile</span>
       </a>
     </div>
   </div>
-
-
-
-  <main class="px-8 py-16">
-  <section class="mb-16">
-    <h1 class="text-4xl font-bold text-center mb-8">Our Mission</h1>
-    <p class="text-lg text-center max-w-3xl mx-auto">
-      Our mission is to provide adventurous and exciting tours for people who love to explore the world. We aim to create unforgettable experiences and foster a community of like-minded travelers.
-    </p>
-  </section>
-  <section>
-    <h2 class="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
-    <div class="grid grid-cols-5 gap-8">
-      <div class="col-span-1 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
-        <img
-          alt="Portrait of John Doe, the CEO of Travel"
-          class="w-full h-64 object-cover"
-          height="300"
-          src="https://placehold.co/300x300"
-          width="300"
-        />
-
-
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">John Doe</h3>
-          <p class="text-gray-700 mb-4">CEO</p>
-          <p class="text-gray-600">
-            John is the visionary behind Travel, leading the company with his passion for adventure and exploration.
-          </p>
+  
+  <main class="main-section px-8 py-16">
+    <section class="mb-16">
+      <h1 class="text-4xl font-bold text-center mb-8">Our Mission</h1>
+      <p class="text-lg text-center max-w-3xl mx-auto">
+        Our mission is to provide adventurous and exciting tours for people who love to explore the world. We aim to create unforgettable experiences and foster a community of like-minded travelers.
+      </p>
+    </section>
+    <section>
+      <h2 class="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+          <img alt="Portrait of John Doe, the CEO of Travel" class="w-full h-64 object-cover" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-FkwPL9ngM22yKtx0pUHyA86S.png?st=2024-05-17T07%3A43%3A05Z&se=2024-05-17T09%3A43%3A05Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-05-16T15%3A28%3A01Z&ske=2024-05-17T15%3A28%3A01Z&sks=b&skv=2021-08-06&sig=6qkg9L5SYkEVr4V4H6SXo7QHRxIDSd2CWU4/aVMmHpE%3D"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">John Doe</h3>
+            <p class="text-gray-700 mb-4">CEO</p>
+            <p class="text-gray-600">John is the visionary behind Travel, leading the company with his passion for adventure and exploration.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+          <img alt="Portrait of Jane Smith, the COO of Travel" class="w-full h-64 object-cover" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-ovPJeSh0uCSebwfVvuespcMC.png?st=2024-05-17T07%3A43%3A02Z&se=2024-05-17T09%3A43%3A02Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-05-17T00%3A48%3A48Z&ske=2024-05-18T00%3A48%3A48Z&sks=b&skv=2021-08-06&sig=1t%2BbYgXxOMyGfpKfk9ZnOmH3kxUGClD2nolJasyEeBg%3D"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Jane Smith</h3>
+            <p class="text-gray-700 mb-4">COO</p>
+            <p class="text-gray-600">Jane ensures that all operations run smoothly, making sure every tour is a success.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+          <img alt="Portrait of Michael Brown, the CFO of Travel" class="w-full h-64 object-cover" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-IcM1nVBiC38FwQiVapMB18sb.png?st=2024-05-17T07%3A43%3A03Z&se=2024-05-17T09%3A43%3A03Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-05-16T14%3A25%3A33Z&ske=2024-05-17T14%3A25%3A33Z&sks=b&skv=2021-08-06&sig=uB6Ph/AU1lrofCMR9zGflPpvSkymkb1EYkVmeAtTt1w%3D"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Michael Brown</h3>
+            <p class="text-gray-700 mb-4">CFO</p>
+            <p class="text-gray-600">Michael manages the financial health of the company, ensuring sustainable growth.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+          <img alt="Portrait of Emily Davis, the Marketing Director of Travel" class="w-full h-64 object-cover" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-UNhmS1MviYIFDb59YVk8TswZ.png?st=2024-05-17T07%3A43%3A09Z&se=2024-05-17T09%3A43%3A09Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-05-16T13%3A41%3A48Z&ske=2024-05-17T13%3A41%3A48Z&sks=b&skv=2021-08-06&sig=Unwi3r%2BnZhagPFXNT0rQk4vheGsd4H0QhFKeXUZZVbU%3D"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Emily Davis</h3>
+            <p class="text-gray-700 mb-4">Marketing Director</p>
+            <p class="text-gray-600">Emily is the creative force behind our marketing campaigns, spreading the word about our amazing tours.</p>
+          </div>
+        </div>
+        <div class="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
+          <img alt="Portrait of David Wilson, the Customer Service Manager of Travel" class="w-full h-64 object-cover" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-5XZbFsAcWRhGOknmkxrenkf4.png?st=2024-05-17T07%3A43%3A05Z&se=2024-05-17T09%3A43%3A05Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-05-16T22%3A54%3A02Z&ske=2024-05-17T22%3A54%3A02Z&sks=b&skv=2021-08-06&sig=%2BfLaZz7HDNUDNOhVy0OkNqP1FXzoX%2Ba6pNoTxumd400%3D"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">David Wilson</h3>
+            <p class="text-gray-700 mb-4">Customer Service Manager</p>
+            <p class="text-gray-600">David ensures that all our customers have a seamless and enjoyable experience from start to finish.</p>
+          </div>
         </div>
       </div>
-      <div class="col-span-1 col-start-3 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
-        <img
-          alt="Portrait of Jane Smith, the COO of Travel"
-          class="w-full h-64 object-cover"
-          height="300"
-          src="https://placehold.co/300x300"
-          width="300"
-        />
+    </section>
+  </main>
 
 
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Jane Smith</h3>
-          <p class="text-gray-700 mb-4">COO</p>
-          <p class="text-gray-600">
-            Jane ensures that all operations run smoothly, making sure every tour is a success.
-          </p>
-        </div>
-      </div>
-      <div class="col-span-1 col-start-5 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
-        <img
-          alt="Portrait of Michael Brown, the CFO of Travel"
-          class="w-full h-64 object-cover"
-          height="300"
-          src="https://placehold.co/300x300"
-          width="300"
-        />
+  <footer class="bg-gray-200 text-gray-800 px-20 py-16 w-full border-t-4 border-gray-400">
+            <div class="max-w-screen-xl mx-auto flex flex-wrap justify-between items-start">
+              <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
+                <a href="#"><img src="img/icon.png" alt="Travel logo with a globe and airplane silhouette" class="w-48 mx-auto md:mx-0"></a>
+                <p class="text-base text-gray-600 mt-4">Lorem ipsum is simply dummy text for industry</p>
+                <div class="mt-4">
+                  <p class="font-bold text-base text-gray-800">Call for info:</p>
+                  <p class="text-base text-gray-800">+03 80 902 399</p>
+                </div>
+              </div>
+              <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
+                <h3 class="font-bold text-xl text-gray-800">Company</h3>
+                <a href="#" class="text-base text-gray-800 block mt-2">About Us</a>
+                <a href="#" class="text-base text-gray-800 block mt-2">Company</a>
+                <a href="#" class="text-base text-gray-800 block mt-2">Press & Blog</a>
+                <a href="#" class="text-base text-gray-800 block mt-2">Privacy Policy</a>
+              </div>
+              <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
+                <h3 class="font-bold text-xl text-gray-800">Quick Link</h3>
+                <a href="#" class="text-base text-gray-800 block mt-2">Press Centre</a>
+                <a href="#" class="text-base text-gray-800 block mt-2">Travel Centre</a>
+                <a href="#" class="text-base text-gray-800 block mt-2">About Us</a>
+                <a href="#" class="text-base text-gray-800 block mt-2">Privacy Policy</a>
+              </div>
+              <div class="footer-section w-full md:w-1/4 text-center md:text-left">
+                <h3 class="font-bold text-xl text-gray-800">Join Us Now</h3>
+              </div>
+            </div>
+          </footer>
 
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Michael Brown</h3>
-          <p class="text-gray-700 mb-4">CFO</p>
-          <p class="text-gray-600">
-            Michael manages the financial health of the company, ensuring sustainable growth.
-          </p>
-        </div>
-      </div>
-      <div class="col-span-1 col-start-2 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
-        <img
-          alt="Portrait of Emily Davis, the Marketing Director of Travel"
-          class="w-full h-64 object-cover"
-          height="300"
-          src="https://placehold.co/300x300"
-          width="300"
-        />
-
-
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Emily Davis</h3>
-          <p class="text-gray-700 mb-4">Marketing Director</p>
-          <p class="text-gray-600">
-            Emily is the creative force behind our marketing campaigns, spreading the word about our amazing tours.
-          </p>
-        </div>
-      </div>
-      <div class="col-span-1 col-start-4 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105">
-        <img
-          alt="Portrait of David Wilson, the Customer Service Manager of Travel"
-          class="w-full h-64 object-cover"
-          height="300"
-          src="https://placehold.co/300x300"
-          width="300"
-        />
-
-
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">David Wilson</h3>
-          <p class="text-gray-700 mb-4">Customer Service Manager</p>
-          <p class="text-gray-600">
-            David ensures that all our customers have a seamless and enjoyable experience from start to finish.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="bg-gray-200 text-gray-800 px-20 py-16 w-full border-t-4 border-gray-400">
-  <div class="max-w-screen-xl mx-auto flex flex-wrap justify-between items-start">
-    <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
-      <a href="#"><img src="img/icon.png" alt="Travel logo with a globe and airplane silhouette" class="w-48 mx-auto md:mx-0"></a>
-      <p class="text-base text-gray-600 mt-4">Lorem ipsum is simply dummy text for industry</p>
-      <div class="mt-4">
-        <p class="font-bold text-base text-gray-800">Call for info:</p>
-        <p class="text-base text-gray-800">+03 80 902 399</p>
-      </div>
-    </div>
-    <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
-      <h3 class="font-bold text-xl text-gray-800">Company</h3>
-      <a href="#" class="text-base text-gray-800 block mt-2">About Us</a>
-      <a href="#" class="text-base text-gray-800 block mt-2">Company</a>
-      <a href="#" class="text-base text-gray-800 block mt-2">Press & Blog</a>
-      <a href="#" class="text-base text-gray-800 block mt-2">Privacy Policy</a>
-    </div>
-    <div class="footer-section w-full md:w-1/4 text-center md:text-left mb-8 md:mb-0">
-      <h3 class="font-bold text-xl text-gray-800">Quick Link</h3>
-      <a href="#" class="text-base text-gray-800 block mt-2">Press Centre</a>
-      <a href="#" class="text-base text-gray-800 block mt-2">Travel Centre</a>
-      <a href="#" class="text-base text-gray-800 block mt-2">About Us</a>
-      <a href="#" class="text-base text-gray-800 block mt-2">Privacy Policy</a>
-    </div>
-    <div class="footer-section w-full md:w-1/4 text-center md:text-left">
-      <h3 class="font-bold text-xl text-gray-800">Join Us Now</h3>
-    </div>
-  </div>
-</footer>
 
 
   <script>
    document.addEventListener('DOMContentLoaded', function() {
-                const themeToggle = document.querySelector('.theme-toggle');
-                themeToggle.addEventListener('click', function() {
-                    document.body.classList.toggle('dark-theme');
-                    const icon = themeToggle;
-                    if (document.body.classList.contains('dark-theme')) {
-                        icon.classList.remove('fa-sun', 'text-yellow-500');
-                        icon.classList.add('fa-moon', 'text-blue-500');
-                    } else {
-                        icon.classList.remove('fa-moon', 'text-blue-500');
-                        icon.classList.add('fa-sun', 'text-yellow-500');
-                    }
-                });
-            });
+      const themeToggle = document.querySelector('.theme-toggle');
+      themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        const icon = themeToggle;
+        if (document.body.classList.contains('dark-theme')) {
+          icon.classList.remove('fa-sun', 'text-yellow-500');
+          icon.classList.add('fa-moon', 'text-blue-500');
+        } else {
+          icon.classList.remove('fa-moon', 'text-blue-500');
+          icon.classList.add('fa-sun', 'text-yellow-500');
+        }
+      });
+    });
   </script>
  </body>
 </html>
