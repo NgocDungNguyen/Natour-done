@@ -683,7 +683,7 @@
   }
   
   html {
-    font-size: 62.5%
+    font-size: 80%
   }
   
   @media only screen and (max-width: 75em) {
@@ -727,11 +727,12 @@
   }
   
   body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    color: #777
-  }
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
   .heading-primary {
     color: #fff;
     text-transform: uppercase;
@@ -2055,15 +2056,6 @@
   color: #ffffff;
 }
 
-/* Navbar */
-.dark-theme .navbar {
-  background-color: #333;
-}
-
-.dark-theme .navbar a {
-  color: #e0e0e0;
-}
-
 /* Header */
 .dark-theme .header {
 
@@ -2120,4 +2112,9 @@
 /* Popup */
 .dark-theme .popup {
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Ensure the font sizes are consistent and appropriate */
+.footer p, .footer h3, .footer a {
+  font-size: 30px; /* Adjust as necessary */
 }

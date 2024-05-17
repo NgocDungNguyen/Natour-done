@@ -15,6 +15,7 @@
 
 .footer .footer-section h3 {
   margin-bottom: 20px;
+  font-size: 18px; /* Ensure font size is appropriate */
 }
 
 .footer .footer-section a {
@@ -22,6 +23,7 @@
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
+  font-size: 14px; /* Ensure font size is appropriate */
 }
 
 .footer .footer-section a:hover {
@@ -48,7 +50,7 @@
 }
 
 .dark-theme footer h3 {
-  color: #91f096;
+  color: #84f78f;
 }
 
 .dark-theme footer p {
@@ -57,13 +59,13 @@
 
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 200px; /* Add padding to avoid overlap with mobile navbar */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 200px; /* Add padding to avoid overlap with mobile navbar */
   }
   .footer .footer-section {
-    width: 100%;
-    margin: 20px 0;
+      width: 100%;
+      margin: 20px 0;
   }
 }
