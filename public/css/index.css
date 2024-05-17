@@ -681,40 +681,32 @@
     -webkit-box-sizing: inherit;
     box-sizing: inherit
   }
-  
+  /* Giữ nguyên kích thước font của footer */
+footer {
+  font-size: 100% !important;
+}
+
+  /* Điều chỉnh phần css cho toàn bộ trang */
+html {
+  font-size: 100%;
+}
+
+@media only screen and (max-width: 768px) {
   html {
-    font-size: 80%
+      font-size: 71%;
   }
-  
-  @media only screen and (max-width: 75em) {
-    html {
-        font-size:56.25%
-    }
+  footer {
+    font-size: 100%;
   }
-  
-  @media only screen and (max-width: 56.25em) {
-    html {
-        font-size:50%
-    }
-  }
-  
-  @media only screen and (min-width: 112.5em) {
-    html {
-        font-size:75%
-    }
-  }
-  
+}
+
+
   body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     
   }
-  
-  @media only screen and (max-width: 56.25em) {
-    body {
-        padding:0
-    }
-  }
+
   
   ::-moz-selection {
     background-color: #55c57a;
