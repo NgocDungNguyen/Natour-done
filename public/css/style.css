@@ -533,7 +533,7 @@ body {
   );
   margin-top: calc(0px - var(--section-rotate));
   position: relative;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .picture-box__img {
@@ -593,7 +593,7 @@ body {
   margin-top: calc(0px - var(--section-rotate));
   padding: calc(5rem + var(--section-rotate)) 0;
   position: relative;
-  z-index: 1000;
+  z-index: 1;
   background: -webkit-gradient(linear, left top, right bottom, from(#7dd56f), to(#28b487));
   background: linear-gradient(to right bottom, #7dd56f, #28b487);
   clip-path: polygon(
