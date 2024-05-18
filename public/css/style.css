@@ -1525,6 +1525,9 @@ body {
   .reviews::-webkit-scrollbar {
     display: none;
 }
+  .reviews__text{
+    font-size: 1.5rem;
+  }
   .cta__img{
     display: none;
   }
@@ -1535,6 +1538,9 @@ body {
   .cta__content .span-all-rows{
     grid-row: 3 / 4;
     grid-column: 1 / 2;
+   }
+   .cta{
+    margin-top: 4rem;
    }
    
 }
