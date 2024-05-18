@@ -1,0 +1,72 @@
+<%- include('base', { 
+    body: ` 
+    <div class="sidebar">
+        <div class="logo">
+            <a href="index.html"><img src="img/icon.png" alt="Travel logo"></a>
+            <span>Travel</span>
+        </div>
+        <div class="section-title">USER</div>
+        <a href="user_profile.html"><i class="fas fa-user"></i> PROFILE</a>
+        <a href="user_security.html"><i class="fas fa-shield-alt"></i> SECURITY</a>
+        <div class="section-title">ACTIVITIES</div>
+        <a href="user_booking.html"><i class="fas fa-book"></i> MY BOOKINGS</a>
+        <a href="user_review.html" class="active"><i class="fas fa-star"></i> MY REVIEWS</a>
+        <a href="user_favourites.html"><i class="fas fa-heart"></i> MANAGE FAVOURITES</a>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <h1>My Review</h1>
+            <a href="index.html"><i class="fas fa-home"></i> Back to home</a>
+        </div>
+
+        <div class="sort-options">
+            <select class="sort-select">
+                <option>Date (Earliest)</option>
+                <option>Rating</option>
+            </select>
+        </div>
+
+        <div class="review-section">
+            <div class="review">
+                <h2>January 14, 2024</h2>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+            </div>
+            <div class="review">
+                <h2>January 14, 2024</h2>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class "fas fa-star"></i>
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+            </div>
+        </div>
+    </div>
+    `,
+    styles: `
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Review</title>
+    <link rel="stylesheet" href="css/user_review.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .review:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    `,
+    
+    script: `
+    
+    ` }) %>

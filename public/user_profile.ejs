@@ -1,0 +1,150 @@
+<%- include('base', { 
+    body: ` 
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar">
+        <div class="logo">
+            <a href="index.html"><img src="img/icon.png" alt="Travel logo"></a>
+            <span>Travel</span>
+        </div>
+        <div class="section-title">USER</div>
+        <a href="user_profile.html"><i class="fas fa-user"></i> PROFILE</a>
+        <a href="user_security.html"><i class="fas fa-shield-alt"></i> SECURITY</a>
+        <div class="section-title">ACTIVITIES</div>
+        <a href="user_booking.html"><i class="fas fa-book"></i> MY BOOKINGS</a>
+        <a href="user_review.html"><i class="fas fa-star"></i> MY REVIEWS</a>
+        <a href="user_favourites.html"><i class="fas fa-heart"></i> MANAGE FAVOURITES</a>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <h1>PROFILE</h1>
+            <a href="index.html"><i class="fas fa-home"></i> Back to home</a>
+        </div>
+
+        <!-- User Profile -->
+        <div class="profile-info">
+            <div class="avatar-wrapper">
+                <img src="https://placehold.co/100x100" alt="User Avatar" id="avatar-img">
+                <input type="file" id="avatar-input" accept="image/*">
+                <label class="avatar-overlay" for="avatar-input">
+                    <i class="fas fa-camera"></i>
+                </label>
+            </div>
+            <div>
+                <div class="name" id="display-name">User Name</div>
+                <div class="email" id="display-email">username@gmail.com <i class="fas fa-check-circle"></i></div>
+                <div class="phone" id="display-phone">None</div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form id="user-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <div class="value" id="name-value">User Name</div>
+                <input type="text" id="name" class="hidden" value="User Name">
+                <button class="change-btn" type="button" onclick="toggleEdit('name')">Update</button>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="email-input">
+                    <div class="value" id="email-value">username@gmail.com <i class="fas fa-check-circle"></i></div>
+                    <input type="email" id="email" class="hidden" value="username@gmail.com">
+                </div>
+                <button class="change-btn" type="button" onclick="toggleEdit('email')">Update</button>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="value" id="phone-value">None</div>
+                <input type="tel" id="phone" class="hidden" placeholder="Enter your phone number" value="None">
+                <button class="change-btn" type="button" onclick="toggleEdit('phone')">Update</button>
+            </div>
+            <div class="form-group">
+                <label>Provider</label>
+                <div class="value">Google</div>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <div class="value">Active</div>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    `,
+    styles: `
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/user_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    `,
+    
+    script: `
+    <script>
+        function toggleEdit(fieldId) {
+            const valueDiv = document.getElementById(`${fieldId}-value`);
+            const inputField = document.getElementById(fieldId);
+            const isHidden = inputField.classList.contains('hidden');
+
+            if (isHidden) {
+                valueDiv.classList.add('hidden');
+                inputField.classList.remove('hidden');
+                inputField.focus();
+            } else {
+                valueDiv.classList.remove('hidden');
+                inputField.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const avatarInput = document.getElementById('avatar-input');
+            const avatarImg = document.getElementById('avatar-img');
+            const userForm = document.getElementById('user-form');
+
+            // Change avatar
+            avatarInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        avatarImg.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Save changes
+            userForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Save the changes logic
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                document.getElementById('display-name').innerText = name;
+                document.getElementById('display-email').innerHTML = email + ' <i class="fas fa-check-circle"></i>';
+                document.getElementById('display-phone').innerText = phone;
+
+                alert('Changes saved successfully!');
+
+                // Re-lock the fields
+                document.getElementById('name-value').innerText = name;
+                document.getElementById('email-value').innerHTML = email + ' <i class="fas fa-check-circle"></i>';
+                toggleEdit('name');
+                toggleEdit('email');
+                toggleEdit('phone');
+            });
+
+            // Hamburger menu logic
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const sidebar = document.querySelector('.sidebar');
+
+            hamburgerMenu.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+        });
+    </script>
+    ` }) %>

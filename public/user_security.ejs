@@ -1,0 +1,113 @@
+<%- include('base', { 
+    body: ` 
+    <div class="sidebar">
+        <div class="logo">
+            <a href="index.html"><img src="img/icon.png" alt="Travel logo"></a>
+            <span>Travel</span>
+        </div>
+        <div class="section-title">USER</div>
+        <a href="user_profile.html"><i class="fas fa-user"></i> PROFILE</a>
+        <a href="user_security.html"><i class="fas fa-shield-alt"></i> SECURITY</a>
+        <div class="section-title">ACTIVITIES</div>
+        <a href="user_booking.html"><i class="fas fa-book"></i> MY BOOKINGS</a>
+        <a href="user_review.html"><i class="fas fa-star"></i> MY REVIEWS</a>
+        <a href="user_favourites.html"><i class="fas fa-heart"></i> MANAGE FAVOURITES</a>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <h1>Security</h1>
+            <a href="index.html"><i class="fas fa-home"></i> Back to home</a>
+        </div>
+
+        <div class="account-options">
+            <div class="account-option">
+                <input type="radio" id="deactivate" name="account_action" value="deactivate" checked>
+                <label for="deactivate"><i class="fas fa-power-off"></i>Deactivate Account: Temporarily disable your account.</label>
+            </div>
+            <div class="account-option">
+                <input type="radio" id="delete" name="account_action" value="delete">
+                <label for="delete"><i class="fas fa-trash-alt"></i>Delete Account: Permanently delete your account and all data.</label>
+            </div>
+        </div>
+
+        <div class="account-action">
+            <button class="deactivate" onclick="showModal()">Deactivate</button>
+        </div>
+    </div>
+
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <h2 id="modalHeading"></h2>
+            <p id="modalText"></p>
+            <div class="modal-buttons">
+                <button class="cancel" onclick="closeModal()">I change my mind</button>
+                <button class="confirm" onclick="confirmAction()">Confirm</button>
+            </div>
+        </div>
+    </div>
+    `,
+    styles: `
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Security</title>
+    <link rel="stylesheet" href="css/user_security.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    `,
+    
+    script: `
+    <script>
+        function updateButton() {
+            const deactivateRadio = document.getElementById('deactivate');
+            const actionButton = document.querySelector('.account-action button');
+
+            if (deactivateRadio.checked) {
+                actionButton.classList.remove('delete');
+                actionButton.classList.add('deactivate');
+                actionButton.textContent = 'Deactivate';
+            } else {
+                actionButton.classList.remove('deactivate');
+                actionButton.classList.add('delete');
+                actionButton.textContent = 'Delete';
+            }
+        }
+
+        document.querySelectorAll('input[name="account_action"]').forEach(radio => {
+            radio.addEventListener('change', updateButton);
+        });
+
+        function showModal() {
+            const modal = document.getElementById('confirmationModal');
+            const modalHeading = document.getElementById('modalHeading');
+            const modalText = document.getElementById('modalText');
+            const deactivateRadio = document.getElementById('deactivate');
+
+            if (deactivateRadio.checked) {
+                modalHeading.textContent = "Are you sure that you want to temporarily deactivate the account?";
+                modalText.innerHTML = "Deactivating your account is temporary. Your account will be disabled and will not be visible to other users. Your data will not be deleted. You can reactivate your account simply by logging in.";
+            } else {
+                modalHeading.textContent = "Are you sure you want to delete the account?";
+                modalText.innerHTML = "Deleting your account is permanent. All your data (bookings, reviews, and feedbacks) will be removed and you will not be able to retrieve your account anymore.";
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'none';
+        }
+
+        function confirmAction() {
+            const deactivateRadio = document.getElementById('deactivate');
+            if (deactivateRadio.checked) {
+                alert('Your account has been deactivated.');
+            } else {
+                alert('Your account has been deleted permanently.');
+            }
+            closeModal();
+            window.location.href = "index.html";
+        }
+    </script>
+    ` }) %>
