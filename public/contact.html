@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -9,11 +10,397 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="img/favicon.png" rel="shortcut icon" type="image/png"/>
-  <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/navbar.css" />
   <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/contact.css" />
 
   <title>Contact Us</title>
+
+  <style>
+    /* Base styles for contact page */
+    .contact-section {
+      padding: 3rem 1rem;
+      background-color: white;
+      color: #333;
+    }
+
+    .contact-section h1, .contact-section h2 {
+      color: #32BB88;
+    }
+
+    .contact-info li {
+      list-style: none;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      color: #333;
+    }
+
+    .contact-info li i {
+      margin-right: 1rem;
+      color: #32BB88;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+
+    .contact-form button {
+      background-color: #32BB88;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #28a745;
+    }
+
+    /* Dark theme styles */
+    body.dark-theme .contact-section {
+      background-color: #333;
+      color: #f4f4f4;
+    }
+
+    body.dark-theme .contact-section h1, body.dark-theme .contact-section h2 {
+      color: #7ED39A;
+    }
+
+    body.dark-theme .contact-info li {
+      color: #f4f4f4;
+    }
+
+    body.dark-theme .contact-info li i {
+      color: #7ED39A;
+    }
+
+    body.dark-theme .contact-form label {
+      color: #f4f4f4;
+    }
+
+    body.dark-theme .contact-form input, body.dark-theme .contact-form textarea {
+      background-color: #444;
+      color: #f4f4f4;
+      border: 1px solid #555;
+    }
+
+    body.dark-theme .contact-form button {
+      background-color: #7ED39A;
+    }
+
+    body.dark-theme .contact-form button:hover {
+      background-color: #32BB88;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .contact-section {
+          padding: 2rem 1rem;
+      }
+
+      .contact-section h1 {
+          font-size: 2rem;
+      }
+
+      .contact-section h2 {
+          font-size: 1.5rem;
+      }
+
+      .contact-info, .contact-form {
+          margin-bottom: 2rem;
+      }
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f7f7f7;
+      color: black;
+      padding: 0;
+    }
+
+    .navbar img {
+      height: 50px;
+    }
+
+    .navbar a, .navbar i {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      padding: 15px 20px;
+      border-radius: 5px;
+      font-size: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover, .navbar i:hover {
+      background-color: #55C57A;
+      text-decoration: underline;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+    }
+
+    .section.middle {
+      flex-grow: 1;
+      justify-content: center;
+      border-right: 2px solid #555;
+      color: beige;
+    }
+
+    .section.right {
+      justify-content: flex-end;
+    }
+
+    .section.left {
+      background-color: #FF8A00;
+      margin-right: auto;
+      padding-left: 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .logo-container span {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .sign-up {
+      background-color: #FF8A00;
+      margin: 0 5px;
+    }
+
+    .log-in {
+      background-color: #FF8A00;
+    }
+
+    .navbar .section a.active,
+    .mobile-navbar a.active {
+      color: #007bff; /* Màu nổi bật cho liên kết active */
+    }
+
+    .navbar .section a:hover,
+    .mobile-navbar a:hover {
+      color: #0056b3; /* Màu khi hover */
+    }
+
+    .dark-theme body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    /* Navbar */
+    .dark-theme .navbar {
+      background-color: #333;
+    }
+
+    .dark-theme .navbar a {
+      color: #e0e0e0;
+    }
+
+    .dark-theme .navbar .fa-star,
+    .dark-theme .navbar .fa-sun,
+    .dark-theme .navbar .fa-moon {
+      color: #e0e0e0;
+    }
+
+    /* Header */
+    .dark-theme .header {
+      background-color: #333;
+    }
+
+    /* Features */
+    .dark-theme .feature-box {
+      background-color: #444;
+    }
+
+    /* Cards */
+    .dark-theme .card__side--front {
+      background-color: #333;
+      color: #e0e0e0;
+    }
+
+    /* Popup */
+    .dark-theme .popup {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .dark-theme .navbar a:hover, .dark-theme .navbar i:hover {
+      background-color: #2E854B;
+      text-decoration: underline;
+    }
+
+    .dark-theme .section.left, .dark-theme .sign-up, .dark-theme .log-in {
+      background-color: #e07800;
+    }
+
+    /* Mobile Navbar */
+    .mobile-navbar {
+      display: none;
+      z-index: 1000;
+    }
+
+    .dark-theme .mobile-navbar {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .dark-theme .mobile-navbar a {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .mobile-navbar {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+    }
+
+    .footer {
+      background-color: #333;
+      color: #f7f7f7;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin: 10px;
+    }
+
+    .footer .footer-section h3 {
+      margin-bottom: 20px;
+      font-size: 18px; /* Ensure font size is appropriate */
+    }
+
+    .footer .footer-section a {
+      color: #f7f7f7;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px; /* Ensure font size is appropriate */
+    }
+
+    .footer .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .footer .social-icons a:hover {
+      color: #5d9a4c;
+    }
+
+    /* Dark Theme */
+    .dark-theme footer {
+      background-color: #1a1a1a;  /* Change background color to match the screenshot */
+      color: #ffffff;  /* Change text color to white */
+    }
+
+    .dark-theme footer a {
+      color: #ffffff;
+    }
+
+    .dark-theme footer h3 {
+      color: #84f78f;
+    }
+
+    .dark-theme footer p {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding-bottom: 200px; /* Add padding to avoid overlap with mobile navbar */
+      }
+      .footer .footer-section {
+          width: 100%;
+          margin: 20px 0;
+      }
+    }
+
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .slide-up {
+      animation: slideUp 1s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hover-grow:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -66,98 +453,47 @@
     </div>
   </div>
 
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-12">
-          <div class="wrapper">
-            <div class="row no-gutters">
-              <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
-                <div class="contact-wrap w-100 p-md-5 p-4">
-                  <div id="form-message-warning" class="mb-4"></div> 
-                  <div id="form-message-success" class="mb-4">
-                    Your message was sent, thank you!
-                  </div>
-                  <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="php/sendEmail.php">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="label" for="name">Full Name</label>
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Name">
-                        </div>
-                      </div>
-                      <div class="col-md-6"> 
-                        <div class="form-group">
-                          <label class="label" for="email">Email Address</label>
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="subject">Subject</label>
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="label" for="#">Message</label>
-                          <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input type="submit" value="Send Message" class="btn btn-primary">
-                          <div class="submitting"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-5 d-flex align-items-stretch">
-                <div class="info-wrap bg-primary w-100 p-md-5 p-4">
-                  <h3>Let's get in touch</h3>
-                  <p class="mb-4">We're open for any suggestion or just to have a chat</p>
-                  <div class="dbox w-100 d-flex align-items-start">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-map-marker"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-                    </div>
-                  </div>
-                  <div class="dbox w-100 d-flex align-items-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-phone"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-                    </div>
-                  </div>
-                  <div class="dbox w-100 d-flex align-items-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-paper-plane"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-                    </div>
-                  </div>
-                  <div class="dbox w-100 d-flex align-items-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                      <span class="fa fa-globe"></span>
-                    </div>
-                    <div class="text pl-3">
-                      <p><span>Website</span> <a href="#">yoursite.com</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <main>
+    <section class="contact-section">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-8 fade-in">Contact Us</h1>
+        <p class="text-lg text-center max-w-3xl mx-auto mb-8 fade-in">
+          We'd love to hear from you! Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 p-6 rounded-lg shadow-lg slide-up hover-grow">
+            <h2 class="text-2xl font-bold mb-4">Get In Touch</h2>
+            <ul class="contact-info">
+              <li class="mb-4"><i class="fas fa-phone-alt"></i> +03 80 902 399</li>
+              <li class="mb-4"><i class="fas fa-envelope"></i> support@example.com</li>
+              <li class="mb-4"><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</li>
+            </ul>
+            <div class="mt-8">
+              <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.8162797797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d1f9f8f8f8f8!2s123%20Main%20Street%2C%20Anytown%2C%20USA!5e0!3m2!1sen!2s!4v1616161616161!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
             </div>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow-lg slide-up hover-grow">
+            <h2 class="text-2xl font-bold mb-4">Send Us A Message</h2>
+            <form action="#" method="POST" class="contact-form">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700">Name</label>
+                <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded" required>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="w-full border border-gray-300 p-2 rounded" required>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block text-gray-700">Message</label>
+                <textarea id="message" name="message" class="w-full border border-gray-300 p-2 rounded" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded">Send</button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="bg-gray-200 text-gray-800 px-20 py-16 w-full border-t-4 border-gray-400">
     <div class="max-w-screen-xl mx-auto flex flex-wrap justify-between items-start">
