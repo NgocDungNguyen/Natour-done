@@ -1,0 +1,23 @@
+.dark-theme .main-section {
+    background-color: #333;
+    color: #e0e0e0;
+  }
+
+  .dark-theme .main-section h1, .dark-theme .main-section h2, .dark-theme .main-section h3 {
+    color: #84f78f;
+  }
+
+  .dark-theme .main-section p {
+    color: #e0e0e0;
+  }
+
+  .dark-theme .main-section .card {
+    background-color: #444;
+  }
+
+  
+  @media (max-width: 768px) {
+    .main-section .grid {
+      grid-template-columns: 1fr;
+    }
+  }
