@@ -619,7 +619,7 @@ body {
   display: grid;
   grid-column-gap: 6rem;
   grid-auto-flow: column;
-  overflow-x: hidden;
+  overflow-x: scroll;
   -ms-scroll-snap-type: x mandatory;
   scroll-snap-type: x mandatory;
 }
@@ -714,10 +714,16 @@ body {
   margin: 0 auto;
   overflow: hidden;
   background-color: #fff;
-  padding: 9rem 5rem 9rem 21rem;
+  
   border-radius: 2rem;
   -webkit-box-shadow: 0 3rem 8rem 0.5rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 3rem 8rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+@media only screen and (min-width: 769px) {
+  .cta {
+    padding: 9rem 5rem 9rem 21rem;
+  }
+  
 }
 .cta__img {
   height: 15rem;
@@ -1462,7 +1468,7 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .card-container {
   max-width: 120rem;
   margin: 0 auto;
@@ -1513,6 +1519,23 @@ body {
     margin-bottom: 0rem;
     padding-bottom: 0rem;
   }
-
+  .section-map{
+    padding:0rem;
+  }
+  .reviews::-webkit-scrollbar {
+    display: none;
+}
+  .cta__img{
+    display: none;
+  }
+  .cta__content{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .cta__content .span-all-rows{
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+   }
+   
 }
 
