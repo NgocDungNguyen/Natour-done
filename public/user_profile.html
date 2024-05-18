@@ -4,17 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="css/user_profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/user_profile.css" />
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            background: linear-gradient(91deg, #7ED39A 0.56%, #32BB88 99.33%);
+            padding: 1rem;
+            width: 20rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar a {
+            color: black;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.1rem;
+        }
+
+        .sidebar a:hover {
+            background-color: #22c55e;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a i {
+            margin-right: 1rem;
+        }
+
+        .sidebar .section-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: black;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: black;
+        }
+
+        .sidebar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .content {
+            padding: 3rem;
+            flex: 1;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            color: #22c55e;
+            font-size: 1.5rem;
+        }
+
+        .content-header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .content-header a {
+            color: #22c55e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .content-header a:hover {
+            text-decoration: underline;
+        }
+
+        .content-header a i {
+            margin-right: 0.5rem;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            margin-right: 1rem;
+        }
+
+        .avatar-wrapper img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .avatar-wrapper input {
+            display: none;
+        }
+
+        .avatar-wrapper .avatar-overlay {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .avatar-wrapper .avatar-overlay i {
+            color: white;
+            font-size: 0.75rem;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .form-group label {
+            color: #6b7280;
+            width: 20%;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group .value {
+            flex: 1;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            outline: none;
+        }
+
+        .form-group .value {
+            border: 1px solid transparent;
+        }
+
+        .form-group input {
+            border: 1px solid #d1d5db;
+        }
+
+        .form-group .email-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group .email-input input {
+            flex: 1;
+            margin-right: 0.5rem;
+        }
+
+        .form-group .email-input i {
+            color: #22c55e;
+        }
+
+        .form-group .change-btn {
+            background-color: #22c55e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: none;
+            cursor: pointer;
+            margin-left: 0.5rem;
+        }
+
+        .form-group .change-btn:hover {
+            background-color: #16a34a;
+        }
+
+        button[type="submit"] {
+            background-color: #22c55e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1.5rem;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #16a34a;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(91deg, #7ED39A 0.56%, #32BB88 99.33%);
+                z-index: 10;
+                padding-top: 4rem;
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                display: flex;
+                transform: translateX(0);
+            }
+
+            .hamburger {
+                display: block;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 20;
+                background-color: #22c55e;
+                border-radius: 50%;
+                padding: 0.5rem;
+            }
+
+            .hamburger i {
+                color: white;
+                font-size: 1.5rem;
+            }
+
+            .content {
+                margin: 0;
+                padding: 1rem;
+            }
+
+            .content-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content-header a {
+                margin-top: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hamburger {
+                display: none;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
-    <div class="hamburger-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-
     <div class="sidebar">
         <div class="logo">
-            <a href="index.html"><img src="img/icon.png" alt="Travel logo"></a>
+            <a href="index.html"><img src="img/icon.png" alt="Travel logo" width="40" height="40"></a>
             <span>Travel</span>
         </div>
         <div class="section-title">USER</div>
@@ -25,49 +305,44 @@
         <a href="user_review.html"><i class="fas fa-star"></i> MY REVIEWS</a>
         <a href="user_favourites.html"><i class="fas fa-heart"></i> MANAGE FAVOURITES</a>
     </div>
-
     <div class="content">
         <div class="content-header">
             <h1>PROFILE</h1>
             <a href="index.html"><i class="fas fa-home"></i> Back to home</a>
         </div>
-
-        <!-- User Profile -->
         <div class="profile-info">
             <div class="avatar-wrapper">
-                <img src="https://placehold.co/100x100" alt="User Avatar" id="avatar-img">
+                <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-03ikH2EE6em9r3PkyuOyAHAV.png?st=2024-05-18T10%3A34%3A29Z&se=2024-05-18T12%3A34%3A29Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-05-17T16%3A11%3A40Z&ske=2024-05-18T16%3A11%3A40Z&sks=b&skv=2021-08-06&sig=QSEcy/Ye/eAYFWtxl6ZiMrpWrwmS78P21X316u46g9M%3D" alt="User Avatar" id="avatar-img" width="100" height="100">
                 <input type="file" id="avatar-input" accept="image/*">
                 <label class="avatar-overlay" for="avatar-input">
                     <i class="fas fa-camera"></i>
                 </label>
             </div>
             <div>
-                <div class="name" id="display-name">User Name</div>
-                <div class="email" id="display-email">username@gmail.com <i class="fas fa-check-circle"></i></div>
-                <div class="phone" id="display-phone">None</div>
+                <div class="name" id="display-name">Abcd</div>
+                <div class="email" id="display-email">abcd@example.com <i class="fas fa-check-circle"></i></div>
+                <div class="phone" id="display-phone">+123456789</div>
             </div>
         </div>
-
-        <!-- Form -->
         <form id="user-form">
             <div class="form-group">
                 <label for="name">Name</label>
-                <div class="value" id="name-value">User Name</div>
-                <input type="text" id="name" class="hidden" value="User Name">
+                <div class="value" id="name-value">Abcd</div>
+                <input type="text" id="name" class="hidden" value="Abcd">
                 <button class="change-btn" type="button" onclick="toggleEdit('name')">Update</button>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <div class="email-input">
-                    <div class="value" id="email-value">username@gmail.com <i class="fas fa-check-circle"></i></div>
-                    <input type="email" id="email" class="hidden" value="username@gmail.com">
+                    <div class="value" id="email-value">abcd@example.com <i class="fas fa-check-circle"></i></div>
+                    <input type="email" id="email" class="hidden" value="abcd@example.com">
                 </div>
                 <button class="change-btn" type="button" onclick="toggleEdit('email')">Update</button>
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <div class="value" id="phone-value">None</div>
-                <input type="tel" id="phone" class="hidden" placeholder="Enter your phone number" value="None">
+                <div class="value" id="phone-value">+123456789</div>
+                <input type="tel" id="phone" class="hidden" placeholder="Enter your phone number" value="+123456789">
                 <button class="change-btn" type="button" onclick="toggleEdit('phone')">Update</button>
             </div>
             <div class="form-group">
@@ -81,7 +356,11 @@
             <button type="submit">Save Changes</button>
         </form>
     </div>
-
+    <div class="hamburger">
+        <button onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
     <script>
         function toggleEdit(fieldId) {
             const valueDiv = document.getElementById(`${fieldId}-value`);
@@ -98,12 +377,16 @@
             }
         }
 
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             const avatarInput = document.getElementById('avatar-input');
             const avatarImg = document.getElementById('avatar-img');
             const userForm = document.getElementById('user-form');
 
-            // Change avatar
             avatarInput.addEventListener('change', function(event) {
                 const file = event.target.files[0];
                 if (file) {
@@ -115,10 +398,8 @@
                 }
             });
 
-            // Save changes
             userForm.addEventListener('submit', function(event) {
                 event.preventDefault();
-                // Save the changes logic
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const phone = document.getElementById('phone').value;
@@ -129,20 +410,11 @@
 
                 alert('Changes saved successfully!');
 
-                // Re-lock the fields
                 document.getElementById('name-value').innerText = name;
                 document.getElementById('email-value').innerHTML = email + ' <i class="fas fa-check-circle"></i>';
                 toggleEdit('name');
                 toggleEdit('email');
                 toggleEdit('phone');
-            });
-
-            // Hamburger menu logic
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const sidebar = document.querySelector('.sidebar');
-
-            hamburgerMenu.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
             });
         });
     </script>
