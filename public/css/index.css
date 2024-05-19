@@ -688,7 +688,7 @@ footer {
 
   /* Điều chỉnh phần css cho toàn bộ trang */
 html {
-  font-size: 100%;
+  font-size: 62.5%;
 }
 
 @media only screen and (max-width: 768px) {
